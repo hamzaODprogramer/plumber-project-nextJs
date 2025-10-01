@@ -1,4 +1,4 @@
-import { useAnimatedNumber } from "@/functions/global";
+import { useAnimatedNumber } from "@/lib/functions/global";
 import { Calendar, ShieldAlert, Wrench } from "lucide-react";
 import Image from "next/image";
 import { JSX, useEffect, useRef, useState } from "react";

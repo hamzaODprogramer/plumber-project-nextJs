@@ -3,7 +3,7 @@ import { Check, Phone } from "lucide-react";
 import Image from "next/image";
 import { JSX, useEffect, useState } from "react";
 
-export default function AboutUS(): JSX.Element {
+export default function AboutUS({className}:{className:string}): JSX.Element {
 
     const [isRTL, setIsRTL] = useState<boolean>(false)
       
@@ -34,7 +34,7 @@ export default function AboutUS(): JSX.Element {
       }, [])
 
     return (
-        <div className="w-full pl-20 pr-20 pt-10">
+        <div className={`${className} w-full pl-10 pr-10 md:pl-20 md:pr-20 pt-10`}>
             <p className="text-[#ff4917] mr-10 font-bold uppercase text-md">À propos de nous</p>
             <div className="flex items-center w-full flex-col lg:flex-row">
                 {/* content textuel */}
