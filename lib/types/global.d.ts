@@ -10,4 +10,12 @@ declare global{
     interface footerProps {
         className? : string
     }
+
+    type InputProps =  {
+        placeholder? : string,
+        icon? : React.ReactNode,
+        className? : string,
+        classNameContainer? : string,
+        type : "text" | "password" | "number" | "email"
+    }
 }
