@@ -12,7 +12,7 @@ export default function SuperSection(): JSX.Element {
         <p className="text-white opacity-80 text-xl font-semibold mt-6 lg:w-1/2 sm:w-full">Avec plus de 20 ans d’expérience, <i>Jaouad OD</i> vous offre des services fiables  : réparation de fuites, installation de tuyauterie, entretien et dépannage.</p>
         <div className="flex items-center gap-3">
           <Button 
-            className="px-5 py-5 mt-10 cursor-pointer text-xl text-white font-semibold bg-[#184d88] hover:bg-[#1e60aa] border duration-700 transition-all" 
+            className="px-5 py-5 mt-10 gap-3 cursor-pointer text-xl text-white font-semibold bg-[#184d88] hover:bg-[#1e60aa] border duration-700 transition-all" 
             text="Appler maintenant" 
             icon={<Phone size={24} color="white" fill="white" className="hidden sm:flex"/>}  
           />

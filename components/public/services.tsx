@@ -3,36 +3,12 @@ import ServiceCard from "./service-card";
 import { Droplet, ShowerHead, Toilet, Waves } from "lucide-react";
 import { useKeenSlider } from "keen-slider/react"
 import "keen-slider/keen-slider.min.css"
+import { CheckingDirection } from "@/lib/functions/global";
 
 export default function Services() : JSX.Element {
 
     const [isRTL, setIsRTL] = useState<boolean>(false)
-          
-    useEffect(() => {
-    const checkRTL = () => {
-        const htmlDir = document.documentElement.dir;
-        const bodyDir = document.body.dir;
-        const computedDir = window.getComputedStyle(document.documentElement).direction;
-        
-        const isRTLDetected = htmlDir === "rtl" || bodyDir === "rtl" || computedDir === "rtl";
-        setIsRTL(isRTLDetected);
-    };
-
-    checkRTL();
-    
-    const timeoutId = setTimeout(checkRTL, 100);
-    
-    const observer = new MutationObserver(checkRTL);
-    observer.observe(document.documentElement, {
-        attributes: true,
-        attributeFilter: ['dir']
-    });
-    
-    return () => {
-        clearTimeout(timeoutId);
-        observer.disconnect();
-    };
-    }, [])
+    CheckingDirection(setIsRTL)
 
     const [ref] = useKeenSlider<HTMLDivElement>(
         {

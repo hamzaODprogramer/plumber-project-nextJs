@@ -3,35 +3,11 @@ import { ArrowRight, ChevronRight, Facebook, FacebookIcon, Linkedin, LocateIcon,
 import React, { useEffect, useState } from "react";
 import Button from "../controls/button";
 import Link from "next/link";
+import { CheckingDirection } from "@/lib/functions/global";
 
 export default function Footer({className}:footerProps) : React.ReactNode {
     const [isRTL, setIsRTL] = useState<boolean>(false)
-          
-    useEffect(() => {
-        const checkRTL = () => {
-            const htmlDir = document.documentElement.dir;
-            const bodyDir = document.body.dir;
-            const computedDir = window.getComputedStyle(document.documentElement).direction;
-            
-            const isRTLDetected = htmlDir === "rtl" || bodyDir === "rtl" || computedDir === "rtl";
-            setIsRTL(isRTLDetected);
-        };
-
-        checkRTL();
-        
-        const timeoutId = setTimeout(checkRTL, 100);
-        
-        const observer = new MutationObserver(checkRTL);
-        observer.observe(document.documentElement, {
-            attributes: true,
-            attributeFilter: ['dir']
-        });
-        
-        return () => {
-            clearTimeout(timeoutId);
-            observer.disconnect();
-        };
-    }, [])
+    CheckingDirection(setIsRTL)
     return <footer className={` bg-[#17224D] px-20 pt-20 pb-5 ${className}`}>
         <div className="size-full w-full grid gap-y-10 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
             <div className="flex flex-col gap-1">

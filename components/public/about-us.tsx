@@ -1,4 +1,5 @@
 "use client"
+import { CheckingDirection } from "@/lib/functions/global";
 import { Check, Phone } from "lucide-react";
 import Image from "next/image";
 import { JSX, useEffect, useState } from "react";
@@ -6,32 +7,7 @@ import { JSX, useEffect, useState } from "react";
 export default function AboutUS({className}:{className:string}): JSX.Element {
 
     const [isRTL, setIsRTL] = useState<boolean>(false)
-      
-      useEffect(() => {
-        const checkRTL = () => {
-          const htmlDir = document.documentElement.dir;
-          const bodyDir = document.body.dir;
-          const computedDir = window.getComputedStyle(document.documentElement).direction;
-          
-          const isRTLDetected = htmlDir === "rtl" || bodyDir === "rtl" || computedDir === "rtl";
-          setIsRTL(isRTLDetected);
-        };
-    
-        checkRTL();
-        
-        const timeoutId = setTimeout(checkRTL, 100);
-        
-        const observer = new MutationObserver(checkRTL);
-        observer.observe(document.documentElement, {
-          attributes: true,
-          attributeFilter: ['dir']
-        });
-        
-        return () => {
-          clearTimeout(timeoutId);
-          observer.disconnect();
-        };
-      }, [])
+    CheckingDirection(setIsRTL)
 
     return (
         <div className={`${className} w-full pl-10 pr-10 md:pl-20 md:pr-20 pt-10`}>

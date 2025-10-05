@@ -18,4 +18,12 @@ declare global{
         classNameContainer? : string,
         type : "text" | "password" | "number" | "email"
     }
+
+    type AdminPageProps = {
+        children : Readonly<React.ReactNode>,
+        addButton : boolean,
+        title : string,
+        open? : boolean,
+        setOpen? : React.Dispatch<React.SetStateAction<boolean>>
+    }
 }

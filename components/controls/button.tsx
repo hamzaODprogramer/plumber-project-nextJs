@@ -1,14 +1,15 @@
-import { JSX, ReactNode } from "react";
+import { JSX, MouseEventHandler, ReactNode } from "react";
 
 interface buttonProps {
     text? : string,
     className? : string,
     icon? : ReactNode,
+    onClick? : MouseEventHandler<HTMLButtonElement>
 }
 
-export default function Button({text,icon,className}:buttonProps) : JSX.Element{
+export default function Button({text,icon,className,onClick}:buttonProps) : JSX.Element{
     return <>
-        <button className={`w-fit h-fit  flex items-center gap-3 ${className}`}>
+        <button onClick={onClick} className={`w-fit h-fit  flex items-center ${className}`}>
             {icon}
             {text}
         </button>

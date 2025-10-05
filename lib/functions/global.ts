@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export const useAnimatedNumber = ({targetNumber, duration = 3000}:{targetNumber:number,duration:number}) => {
     const [currentNumber, setCurrentNumber] = useState(0);
@@ -30,4 +30,32 @@ export const useAnimatedNumber = ({targetNumber, duration = 3000}:{targetNumber:
     };
     
     return { currentNumber, isAnimating, startAnimation };
+}
+
+export function CheckingDirection(setIsRTL:any){
+    useEffect(() => {
+        const checkRTL = () => {
+            const htmlDir = document.documentElement.dir;
+            const bodyDir = document.body.dir;
+            const computedDir = window.getComputedStyle(document.documentElement).direction;
+            
+            const isRTLDetected = htmlDir === "rtl" || bodyDir === "rtl" || computedDir === "rtl";
+            setIsRTL(isRTLDetected);
+        };
+
+        checkRTL();
+        
+        const timeoutId = setTimeout(checkRTL, 100);
+        
+        const observer = new MutationObserver(checkRTL);
+        observer.observe(document.documentElement, {
+            attributes: true,
+            attributeFilter: ['dir']
+        });
+        
+        return () => {
+            clearTimeout(timeoutId);
+            observer.disconnect();
+        };
+    }, [])
 }

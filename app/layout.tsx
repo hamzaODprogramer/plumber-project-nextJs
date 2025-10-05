@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
+import { ReduxProvider } from "@/lib/store/provider";
 import "./globals.css";
+
 
 const poppins = Poppins({ variable: "--font-poppins", subsets: ["latin"], display: "swap" , weight: ["400","500","600"]})
 
@@ -16,14 +18,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html>
       <head>
       </head>
-      
       <body
         className={`${poppins.variable} font-sans h-150`}
       >
-        {children}
+        <ReduxProvider>
+          {children}
+        </ReduxProvider>
       </body>
     </html>
   );
