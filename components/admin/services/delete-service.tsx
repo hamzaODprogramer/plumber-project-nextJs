@@ -20,17 +20,16 @@ export default function DeleteService() : React.ReactNode {
     const dispatch = useDispatch()
 
     return <AlertDialog open={openDeleteDialoge}>
-        <AlertDialogContent>
+        <AlertDialogContent className="!rounded-none">
             <AlertDialogHeader>
             <AlertDialogTitle>Vous etes sûr ?</AlertDialogTitle>
             <AlertDialogDescription>
-                This action cannot be undone. This will permanently delete your account
-                and remove your data from our servers.
+                Cette action sera supprimer de maniere permanent ce service
             </AlertDialogDescription>
             </AlertDialogHeader>
             <AlertDialogFooter>
-            <AlertDialogCancel onClick={()=>dispatch(setOpenDeleteDialoge(false))}>Cancel</AlertDialogCancel>
-            <AlertDialogAction>Continue</AlertDialogAction>
+            <AlertDialogCancel className="rounded-none text-[#061f46] cursor-pointer" onClick={()=>dispatch(setOpenDeleteDialoge(false))}>Anuller</AlertDialogCancel>
+            <AlertDialogAction className="rounded-none bg-[#061f46] hover:bg-[#061f46]/90 cursor-pointer">Continue</AlertDialogAction>
             </AlertDialogFooter>
         </AlertDialogContent>
     </AlertDialog>

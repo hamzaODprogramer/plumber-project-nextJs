@@ -1,6 +1,15 @@
 import React from "react";
 import { Bell, Menu, Search, Sun } from "lucide-react";
 import Image from "next/image";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
+
 
 export default function AdminHeader() : React.ReactNode {
     return (
@@ -21,10 +30,29 @@ export default function AdminHeader() : React.ReactNode {
             <div className="flex items-center gap-5 mr-4 *:cursor-pointer">
                 <Bell size={48} className="p-3 bg-black/5 dark:bg-white/5 dark:text-white dark:hover:bg-white/10 hover:bg-black/10"/>
                 <Sun size={48} fill="yellow" className="p-3 bg-black/5 dark:bg-white/5 dark:text-white dark:hover:bg-white/10 hover:bg-black/10" />
-                <div className="flex items-center gap-2.5 p-2.5 dark:bg-white/5 bg-black/5 dark:hover:bg-white/10 hover:bg-black/10">
-                    <Image className="rounded-full" width={27} height={27} src="/francelg.png" alt="lang" />
-                    <p className="text-black/80 dark:text-white  font-semibold">FR</p>
-                </div>
+                
+                <DropdownMenu>
+                    <DropdownMenuTrigger asChild>
+                        <div className="flex items-center gap-2.5 p-2.5 dark:bg-white/5 bg-black/5 dark:hover:bg-white/10 hover:bg-black/10">
+                            <Image className="rounded-full" width={27} height={27} src="/francelg.png" alt="lang" />
+                            <p className="text-black/80 dark:text-white  font-semibold">FR</p>
+                        </div>
+                    </DropdownMenuTrigger>
+                    <DropdownMenuContent className="!rounded-none">
+                        <DropdownMenuItem>
+                            <div className="flex items-center gap-2.5  ">
+                                <Image className="rounded-full" width={18} height={18} src="/francelg.png" alt="lang" />
+                                <p className="text-black/80 dark:text-white  font-semibold">francais</p>
+                            </div>
+                        </DropdownMenuItem>
+                        <DropdownMenuItem>
+                            <div className="flex items-center gap-2.5  ">
+                                <Image className="rounded-full" width={19} height={19} src="/arabiclg.png" alt="lang" />
+                                <p className="text-black/80 dark:text-white  font-semibold">العربية</p>
+                            </div>
+                        </DropdownMenuItem>
+                    </DropdownMenuContent>
+                </DropdownMenu>
             </div>
         </div>
     );

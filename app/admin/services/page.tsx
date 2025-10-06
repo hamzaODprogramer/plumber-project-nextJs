@@ -15,8 +15,10 @@ import { CheckingDirection } from "@/lib/functions/global"
 import { Eye, Pen, Plus, Table2Icon, Trash } from "lucide-react"
 import { useState } from "react"
 import { useDispatch } from "react-redux";
-import { setOpenUpdateDialoge , setOpenDeleteDialoge } from "@/lib/store/slicer";
+import { setOpenUpdateDialoge , setOpenDeleteDialoge, setOpenShowDialoge } from "@/lib/store/slicer";
 import DeleteService from "@/components/admin/services/delete-service"
+import ShowService from "@/components/admin/services/show-service"
+
 
 export default function AdminService() : React.ReactNode {
   const [isRTL, setIsRTL] = useState<boolean>(false)
@@ -27,6 +29,7 @@ export default function AdminService() : React.ReactNode {
   return <AdminPage addButton title="Liste des Services" >
     <UpdateService />
     <DeleteService />
+    <ShowService />
     <Table>
       <TableHeader className="bg-[#061f46]">
         <TableRow className="*:p-3 *:pl-2 *:text-base *:text-white">
@@ -51,7 +54,7 @@ export default function AdminService() : React.ReactNode {
               {
                 <TableCell className="flex items-center gap-3">
                   <div className="p-1.5 bg-black/10 dark:bg-white/10 cursor-pointer hover:bg-black/15 dark:hover:bg-white/15">
-                    <Eye className="text-[#061f46]/80 dark:text-white" size={23}/>
+                    <Eye onClick={()=>dispatch(setOpenShowDialoge(true))} className="text-[#061f46]/80 dark:text-white" size={23}/>
                   </div>
                   <div onClick={()=>dispatch(setOpenUpdateDialoge(true))} className="p-1.5 bg-black/10 dark:bg-white/10 cursor-pointer hover:bg-black/15 dark:hover:bg-white/15">
                     <Pen className="text-[#061f46]/80 dark:text-white" size={23}/>
