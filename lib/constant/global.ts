@@ -25,7 +25,7 @@ export const links : Array<{route:string,name:string,icon?: any}> = [
 export const admin_links : Array<{route:string,name:string,icon?: any}> = [
   { route : '/admin' , name : 'Acceuil' , icon : Home },
   { route : '/admin/services' , name : 'Services' , icon : ShowerHead },
-  { route : '/admi' , name : 'Messages' , icon : MessageCircle },
+  { route : '/admin/messages' , name : 'Messages' , icon : MessageCircle },
   { route : '/admi' , name : 'Contacts' , icon : Contact },
   { route : '/admi' , name : 'Gallerie' , icon : Images },
   { route : '/admi' , name : 'Compte' , icon : User },
@@ -56,3 +56,5 @@ export const plumbingIcons = [
   { value: "wind", label: "Vent/Air", icon: Wind },
   { value: "pipette", label: "Pipette", icon: Pipette },
 ]
+
+export const colorAccounts = ["#b91c1c","#c2410c","#be185d","#3730a3","#0369a1","#042f2e","#14532d","#1a2e05"]

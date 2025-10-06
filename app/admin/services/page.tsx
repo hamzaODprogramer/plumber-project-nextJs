@@ -1,8 +1,6 @@
 "use client"
 import AdminPage from "@/components/admin/admin-page"
-import AddService from "@/components/admin/services/add-service"
 import UpdateService from "@/components/admin/services/update-service"
-import Button from "@/components/controls/button"
 import {
   Table,
   TableBody,
@@ -12,7 +10,7 @@ import {
   TableRow,
 } from "@/components/ui/table"
 import { CheckingDirection } from "@/lib/functions/global"
-import { Eye, Pen, Plus, Table2Icon, Trash } from "lucide-react"
+import { Eye, Pen, Trash } from "lucide-react"
 import { useState } from "react"
 import { useDispatch } from "react-redux";
 import { setOpenUpdateDialoge , setOpenDeleteDialoge, setOpenShowDialoge } from "@/lib/store/slicer";
@@ -26,7 +24,7 @@ export default function AdminService() : React.ReactNode {
 
   const dispatch = useDispatch()
 
-  return <AdminPage addButton title="Liste des Services" >
+  return <AdminPage addButton title="Services" titleTable="Liste des Services" table>
     <UpdateService />
     <DeleteService />
     <ShowService />
@@ -42,6 +40,12 @@ export default function AdminService() : React.ReactNode {
       <TableBody className="*:p-3 *:h-12 *:dark:text-white">
         {
           [
+            {"name":"INV001","desc":"Paid","icon":"Test"},
+            {"name":"INV001","desc":"Paid","icon":"Test"},
+            {"name":"INV001","desc":"Paid","icon":"Test"},
+            {"name":"INV001","desc":"Paid","icon":"Test"},
+            {"name":"INV001","desc":"Paid","icon":"Test"},
+            {"name":"INV001","desc":"Paid","icon":"Test"},
             {"name":"INV001","desc":"Paid","icon":"Test"},
             {"name":"INV001","desc":"Paid","icon":"Test"},
           ].map((d,idx)=>{
@@ -70,6 +74,4 @@ export default function AdminService() : React.ReactNode {
       </TableBody>
     </Table>
   </AdminPage>
-      
-    
 }

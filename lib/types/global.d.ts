@@ -21,8 +21,10 @@ declare global{
 
     type AdminPageProps = {
         children : Readonly<React.ReactNode>,
-        addButton : boolean,
+        addButton? : boolean,
         title : string,
+        titleTable? : string,
+        table : boolean,
         open? : boolean,
         setOpen? : React.Dispatch<React.SetStateAction<boolean>>
     }

@@ -6,18 +6,18 @@ import AddService from "./services/add-service";
 import { useDispatch } from "react-redux";
 import { setOpenAddDialoge } from "@/lib/store/slicer";
 
-export default function AdminPage({children,addButton,title}:AdminPageProps) : React.ReactNode {
+export default function AdminPage({children,addButton,title,table,titleTable}:AdminPageProps) : React.ReactNode {
     
     const dispatch = useDispatch()
 
-    return <div className="p-5 dark:bg-gray-700">
+    return <div className="p-5 dark:bg-gray-700 relative">
       <AddService/>
-      <p className="text-2xl opacity-90 text-[#061f46] dark:text-white font-semibold">Services</p>
-      <div className="bg-white mt-5 dark:bg-gray-800 flex-1 px-5 py-5.5 flex flex-col gap-4 items-center justify-center shadow-sm shadow-black/15 dark:shadow-white/15">
+      <p className="text-2xl sticky top-2.5 z-50 mb-2 text-[#061f46]/90 dark:text-white/90 font-semibold bg-gray-100 dark:bg-gray-700 pb-2">{title}</p>
+      {table && <div className="bg-white mt-5 dark:bg-gray-800 flex-1 px-5 py-5.5 flex flex-col gap-4 items-center justify-center shadow-sm shadow-black/15 dark:shadow-white/15 relative z-10">
         <div className="w-full flex items-center justify-between">
           <div className="flex items-center gap-2">
             <Table2Icon size={24} className="text-[#061f46]/85 dark:text-white"/>
-            <p className="font-medium text-lg text-[#061f46]/85 dark:text-white">{title}</p>
+            <p className="font-medium text-lg text-[#061f46]/85 dark:text-white">{titleTable}</p>
           </div>
           {
             addButton && <Button 
@@ -28,7 +28,10 @@ export default function AdminPage({children,addButton,title}:AdminPageProps) : R
             />
           }
         </div>
-        {children}
-      </div>
+        {table && children}
+      </div>}
+      {
+        !table && children
+      }
   </div>
 }
