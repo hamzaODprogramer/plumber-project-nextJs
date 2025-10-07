@@ -5,6 +5,8 @@ const initialState = {
     openUpdateDialoge : false,
     openDeleteDialoge : false,
     openShowDialoge : false,
+    openShowImageDialoge : false,
+    openDeleteImageDialoge : false
 }
 
 export const adminSlicer = createSlice({
@@ -22,9 +24,15 @@ export const adminSlicer = createSlice({
         },
         setOpenShowDialoge: (state, action) => {
             state.openShowDialoge = action.payload
+        },
+        setOpenShowImageDialoge: (state, action) => {
+            state.openShowImageDialoge = action.payload
+        },
+        setOpenDeleteImageDialoge: (state, action) => {
+            state.openDeleteImageDialoge = action.payload
         }
     }
 })
 
-export const { setOpenAddDialoge , setOpenUpdateDialoge , setOpenDeleteDialoge , setOpenShowDialoge } = adminSlicer.actions
+export const { setOpenAddDialoge , setOpenUpdateDialoge , setOpenDeleteDialoge , setOpenShowDialoge , setOpenShowImageDialoge , setOpenDeleteImageDialoge} = adminSlicer.actions
 export default adminSlicer.reducer

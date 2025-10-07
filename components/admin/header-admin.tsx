@@ -5,8 +5,6 @@ import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 
@@ -16,7 +14,7 @@ export default function AdminHeader() : React.ReactNode {
         <div className="flex items-center justify-between w-full  py-4 px-3 dark:bg-gray-800 bg-white  border-b border-black/10">
             <div className="flex-1 flex items-center gap-3">
                 <Menu size={48} className="p-3 dark:bg-white/5 bg-black/5 cursor-pointer dark:hover:bg-white/10 dark:text-white hover:bg-black/10"/>
-                <div className={`flex flex-row-reverse w-1/4 bg-black/5 dark:bg-white/5 justify-start p-3 gap-2 items-center focus-within:w-1/3 transition-all duration-300 focus-within:ring-2 focus-within:ring-blue-100`}>
+                <div className={`flex flex-row-reverse w-2/4 sm:w-1/4 bg-black/5 dark:bg-white/5 justify-start p-3 gap-2 items-center focus-within:w-1/3 transition-all duration-300 focus-within:ring-2 focus-within:ring-blue-100`}>
                     <input 
                         type="search"
                         placeholder="Recherche"
@@ -29,7 +27,7 @@ export default function AdminHeader() : React.ReactNode {
 
             <div className="flex items-center gap-5 mr-4 *:cursor-pointer">
                 <Bell size={48} className="p-3 bg-black/5 dark:bg-white/5 dark:text-white dark:hover:bg-white/10 hover:bg-black/10"/>
-                <Sun size={48} fill="yellow" className="p-3 text-yellow-300 bg-black/5 dark:bg-white/5 dark:text-white dark:hover:bg-white/10 hover:bg-black/10" />
+                <Sun size={48}  className="p-3  bg-black/5 dark:bg-white/5 dark:text-white dark:hover:bg-white/10 hover:bg-black/10" />
                 
                 <DropdownMenu>
                     <DropdownMenuTrigger asChild>

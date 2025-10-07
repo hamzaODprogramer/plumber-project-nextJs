@@ -27,7 +27,7 @@ export const admin_links : Array<{route:string,name:string,icon?: any}> = [
   { route : '/admin/services' , name : 'Services' , icon : ShowerHead },
   { route : '/admin/messages' , name : 'Messages' , icon : MessageCircle },
   { route : '/admin/contact' , name : 'Contacts' , icon : Contact },
-  { route : '/admi/gallery' , name : 'Gallerie' , icon : Images },
+  { route : '/admin/gallery' , name : 'Gallerie' , icon : Images },
   { route : '/admi' , name : 'Compte' , icon : User },
   { route : '/admn' , name : 'Déconnexion' , icon : LogOut },
 ]
