@@ -1,3 +1,4 @@
+import { LucideIcon } from "lucide-react";
 import { JSX } from "react";
 
 
@@ -27,5 +28,13 @@ declare global{
         table : boolean,
         open? : boolean,
         setOpen? : React.Dispatch<React.SetStateAction<boolean>>
+    }
+
+    type ContactItemProps = {
+        type? : "number" | "text" | "number" | "email",
+        icon : LucideIcon,
+        placeholder? : string,
+        className? : string,
+        fill : boolean
     }
 }

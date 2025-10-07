@@ -21,9 +21,7 @@ export default function MessageClient() : React.ReactNode {
         <div className="w-full dark:text-white bg-black/5 dark:bg-white/5 px-3 py-2 font-normal border-1 border-[#061f46]/20 dark:border-white/20 shadow-sm shadow-[#061f46]/10 dark:shadow-white">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et ut autem sint incidunt impedit ipsam aliquid libero repudiandae! Minima enim deserunt officiis consequatur corrupti et delectus voluptas quibusdam atque ea!
         </div>
-        <textarea placeholder="Reponse ..." className="w-full mt-2 dark:text-white outline-none focus:ring-blue-300 focus:ring-4 bg-black/5 dark:bg-white/5 px-3 py-2 font-normal">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et ut autem sint incidunt impedit ipsam aliquid libero repudiandae! Minima enim deserunt officiis consequatur corrupti et delectus voluptas quibusdam atque ea!
-        </textarea>
+        <textarea placeholder="Reponse ..." className="w-full mt-2 dark:text-white outline-none focus:ring-blue-300 focus:ring-4 bg-black/5 dark:bg-white/5 px-3 py-2 font-normal" />
         <Button 
             className="px-2 gap-1 font-medium py-2 cursor-pointer  pr-3 text-white dark:text-[#061f46]  bg-[#061f46] dark:bg-white hover:bg-[#061f46]/85 dark:hover:bg-white/85 border duration-700 transition-all" 
             text="Reponder"

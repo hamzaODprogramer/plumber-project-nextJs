@@ -161,3 +161,11 @@
   height: 300px;
   max-height: 100vh;
 }
+
+.dark [data-radix-collection-item] {
+  background-color: rgb(75 85 99) !important; /* gray-600 */
+}
+
+.dark [data-radix-collection-item]:hover {
+  background-color: rgb(55 65 81) !important; /* gray-700 */
+}

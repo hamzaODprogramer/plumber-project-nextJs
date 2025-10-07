@@ -1,7 +1,7 @@
 import React from "react";
 
-export default function AdminInput({type,placeholder,text}:{type:string,placeholder:string,text:string}) : React.ReactNode {
-    return <div className="flex flex-col w-full  dark:bg-white/5 justify-start pt-0 pb-2 gap-1 ">
+export default function AdminInput({type,placeholder,text,className}:{type:string,placeholder:string,text:string,className?:string}) : React.ReactNode {
+    return <div className={`flex flex-col w-full  dark:bg-white/5 justify-start pt-0 pb-2 gap-1 ${className}`}>
       <label 
         className="text-black/95 font-medium "
 

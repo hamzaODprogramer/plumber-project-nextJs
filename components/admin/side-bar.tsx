@@ -25,9 +25,9 @@ export default function SideBar() : React.ReactNode {
                 </div>
                 <div className="mt-4 flex flex-col gap-2">
                     {admin_links.slice(0,5).map((link,idx)=>{
-                        return <Link key={idx} href={link.route} className={`flex items-center gap-2 w-full cursor-pointer px-3 py-2.5 ${(pathname == link.route) ? 'bg-[#061f46] dark:bg-white' : 'hover:bg-black/5 dark:hover:bg-white/5'}`}>
-                            <link.icon size={20} className={` ${(pathname == link.route) ? 'text-white dark:text-[#061f46]' : 'opacity-85 text-[#061f46] dark:text-white'}`} />
-                            <p className={`${(pathname == link.route) ? "text-white dark:text-[#061f46] opacity-85" : "text-[#061f46] dark:text-white opacity-85"}  font-semibold`}>{link.name}</p>
+                        return <Link key={idx} href={link.route} className={`flex items-center gap-2 w-full cursor-pointer px-3 py-2.5 ${(pathname == link.route) ? 'bg-[#061f46] dark:bg-gray-600' : 'hover:bg-black/5 dark:hover:bg-white/5'}`}>
+                            <link.icon size={20} className={` ${(pathname == link.route) ? 'text-white dark:text-white' : 'opacity-85 text-[#061f46] dark:text-white'}`} />
+                            <p className={`${(pathname == link.route) ? "text-white  opacity-85" : "text-[#061f46] dark:text-white opacity-85"}  font-semibold`}>{link.name}</p>
                         </Link> 
                     })}
                 </div>

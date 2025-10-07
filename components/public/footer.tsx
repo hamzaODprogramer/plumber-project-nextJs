@@ -8,7 +8,7 @@ import { CheckingDirection } from "@/lib/functions/global";
 export default function Footer({className}:footerProps) : React.ReactNode {
     const [isRTL, setIsRTL] = useState<boolean>(false)
     CheckingDirection(setIsRTL)
-    return <footer className={` bg-[#17224D] px-20 pt-20 pb-5 ${className}`}>
+    return <footer className={` bg-[#17224D] px-8 sm:px-20 pt-8 sm:pt-20 pb-5 ${className}`}>
         <div className="size-full w-full grid gap-y-10 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
             <div className="flex flex-col gap-1">
                 <p className="text-white font-bold text-2xl">Adresse</p>

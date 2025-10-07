@@ -29,7 +29,7 @@ export default function AdminHeader() : React.ReactNode {
 
             <div className="flex items-center gap-5 mr-4 *:cursor-pointer">
                 <Bell size={48} className="p-3 bg-black/5 dark:bg-white/5 dark:text-white dark:hover:bg-white/10 hover:bg-black/10"/>
-                <Sun size={48} fill="yellow" className="p-3 bg-black/5 dark:bg-white/5 dark:text-white dark:hover:bg-white/10 hover:bg-black/10" />
+                <Sun size={48} fill="yellow" className="p-3 text-yellow-300 bg-black/5 dark:bg-white/5 dark:text-white dark:hover:bg-white/10 hover:bg-black/10" />
                 
                 <DropdownMenu>
                     <DropdownMenuTrigger asChild>
@@ -38,7 +38,7 @@ export default function AdminHeader() : React.ReactNode {
                             <p className="text-black/80 dark:text-white  font-semibold">FR</p>
                         </div>
                     </DropdownMenuTrigger>
-                    <DropdownMenuContent className="!rounded-none">
+                    <DropdownMenuContent className="!rounded-none !dark:bg-gray-600">
                         <DropdownMenuItem>
                             <div className="flex items-center gap-2.5  ">
                                 <Image className="rounded-full" width={18} height={18} src="/francelg.png" alt="lang" />

@@ -20,7 +20,7 @@ export default function HomeDashborad(): React.ReactNode {
                     </p>
                 </div>
             </div>
-            <div className="w-full lg:w-1/2 h-full flex items-stretch gap-6">
+            <div className="w-full lg:w-1/2 h-full flex items-stretch gap-5">
                 <div className="bg-white dark:bg-gray-800 flex-1 px-5 py-5.5 flex flex-col items-center justify-center shadow-sm shadow-black/15 dark:shadow-white/15">
                     <div className="rounded-full p-5 bg-black/10 dark:bg-white/10">
                         <MessageCircle size={45} fill={false ?`rgb(6,31,70)` : 'white'} className="text-[rgb(6,31,70)] dark:text-white" />
