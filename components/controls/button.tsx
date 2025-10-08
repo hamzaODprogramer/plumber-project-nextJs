@@ -9,7 +9,7 @@ interface buttonProps {
 
 export default function Button({text,icon,className,onClick}:buttonProps) : JSX.Element{
     return <>
-        <button onClick={onClick} className={`w-fit h-fit  flex items-center ${className}`}>
+        <button onClick={onClick} className={`w-fit h-fit flex items-center ${className}`}>
             {icon}
             {text}
         </button>
