@@ -1,4 +1,5 @@
 "use client"
+import AdminAccountInput from "@/components/admin/account/admin-account-input";
 import AdminInput from "@/components/admin/admin-input";
 import AdminPage from "@/components/admin/admin-page";
 import OtpCheck from "@/components/admin/otp-check";
@@ -13,9 +14,9 @@ export default function AdminAccount() : React.ReactNode {
 
     return <AdminPage title="Compte" table titleTable="Gestion de Compte">
         <OtpCheck />
-        <AdminInput text="Nom d'utilisateur" type="text" placeholder="Entrer le nom d'utilisateur"/>
-        <AdminInput text="Email" type="email" placeholder="Entrer l'email"/>
-        <AdminInput text="Mots de passe" type="password" placeholder="Entrer le mots de passe"/>
+        <AdminAccountInput text="Nom d'utilisateur" type="text" placeholder="Entrer le nom d'utilisateur"/>
+        <AdminAccountInput text="Email" type="email" placeholder="Entrer l'email"/>
+        <AdminAccountInput text="Mots de passe" type="password" placeholder="Entrer le mots de passe"/>
         <Button  
             onClick={()=>dispatch(setOpenOtpCompteAdminDialoge(true))}
             icon={<Save size={24} />}

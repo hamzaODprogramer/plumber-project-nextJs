@@ -3,7 +3,7 @@ import SideBar from "@/components/admin/side-bar";
 
 export default function AdminLayout({children}:Readonly<{children:React.ReactNode}>){
     return (
-        <div className="flex h-screen bg-black/5 dark:bg-gray-700 light">
+        <div className="flex h-screen bg-black/5 dark:bg-gray-700 dark">
             <SideBar />
             <div className="flex-1 flex flex-col">
                 <AdminHeader />
