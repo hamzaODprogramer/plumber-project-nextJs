@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { Bell, Menu, Moon, Search, Sun } from "lucide-react";
+import React, { useEffect, useState, useRef } from "react";
+import { Bell, Inbox, Menu, Moon, Search, Sun } from "lucide-react";
 import Image from "next/image";
 import {
   DropdownMenu,
@@ -19,12 +19,13 @@ import {
   DrawerTitle,
   DrawerTrigger,
 } from "@/components/ui/drawer"
-import { admin_links } from "@/lib/constant/global";
+import { admin_links, search_mapper } from "@/lib/constant/global";
 import Link from "next/link";
 import { CheckingDirection, useDarkMode } from "@/lib/functions/global";
 import { usePathname } from "next/navigation";
 import NotificationItem from "./notification-item";
 import { Button } from "../ui/button";
+import SearchItem from "./search-item";
 
 export default function AdminHeader() : React.ReactNode {
     const sideBarVisibility = useSelector((action:RootState)=>action.admin.sideBarVisibility)
@@ -36,6 +37,10 @@ export default function AdminHeader() : React.ReactNode {
     
     // Document Size State
     const [clientWidth,setClientWidth] = useState(0)
+
+    // Search Logic 
+    const [query,setQuery] = useState<string>("")
+    const searchContainerRef = useRef<HTMLDivElement>(null)
 
     useEffect(() => {
         setClientWidth(document.body.clientWidth)
@@ -49,6 +54,21 @@ export default function AdminHeader() : React.ReactNode {
         return () => window.removeEventListener('resize', handleResize)
     }, []);
 
+    // Click outside handler to close search dropdown
+    useEffect(() => {
+        const handleClickOutside = (event: MouseEvent) => {
+            if (searchContainerRef.current && !searchContainerRef.current.contains(event.target as Node)) {
+                setQuery("")
+            }
+        }
+
+        document.addEventListener('mousedown', handleClickOutside)
+        
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside)
+        }
+    }, [])
+
     const handleMenuClick = () => {
         if (clientWidth >= 752) {
             dispatch(setSideBarVisibility(!sideBarVisibility))
@@ -57,6 +77,22 @@ export default function AdminHeader() : React.ReactNode {
 
     // Dark Mode Section 
     const { mode, toggleMode } = useDarkMode()
+
+    const filterLinks = () => {
+        if(!query.trim()) return admin_links; 
+        
+        const normalizedQuery = query.toLowerCase().trim();
+        
+        const matchingRoutes = search_mapper
+            .filter((item) => 
+                item.key_words.some((key_word) => 
+                    key_word.toLowerCase().includes(normalizedQuery) 
+                )
+            )
+            .map(item => item.route);
+
+        return admin_links.filter(link => matchingRoutes.includes(link.route));
+    }
 
     return (
         <div className="flex items-center justify-between w-full  py-4 px-3 dark:bg-gray-800 bg-white  border-b border-black/10">
@@ -87,15 +123,34 @@ export default function AdminHeader() : React.ReactNode {
                 ) : (
                     <Menu onClick={handleMenuClick} size={48} className="p-3 dark:bg-white/5 bg-black/5 cursor-pointer dark:hover:bg-white/10 dark:text-white hover:bg-black/10"/>
                 )}
-                
-                <div className={`flex flex-row-reverse w-2/4 sm:w-1/4 bg-black/5 dark:bg-white/5 justify-start p-3 gap-2 items-center focus-within:w-1/3 transition-all duration-300 focus-within:ring-2 focus-within:ring-blue-100`}>
-                    <input 
-                        type="search"
-                        placeholder="Recherche"
-                        className={`flex-1 dark:text-white text-gray-600 font-semibold outline-none w-full bg-transparent `}
-                    />
-                    <Search size={20} className="text-[rgb(6,31,70)] dark:text-white opacity-50"/>
-                </div>
+                    <div ref={searchContainerRef} className="relative flex-1">
+                        <div className={`flex flex-row-reverse w-2/4 sm:w-1/4 bg-black/5 dark:bg-white/5 justify-start p-3 gap-2 items-center focus-within:w-1/3 transition-all duration-300 focus-within:ring-2 focus-within:ring-blue-100`}>
+                            <input 
+                                value={query}
+                                onChange={(e) => setQuery(e.target.value)}
+                                type="search"
+                                placeholder="Recherche"
+                                className={`flex-1 dark:text-white text-gray-600 font-semibold outline-none w-full bg-transparent `}
+                            />
+                            <Search size={20} className="text-[rgb(6,31,70)] dark:text-white opacity-50"/>
+                        </div>
+                        
+                        {query.length > 0 && (
+                            <div className="absolute p-2 bg-white border-1 shadow-md shadow-black/30 border-black/20 top-full left-0 mt-2 w-[50%] dark:bg-gray-600  z-90 rounded-none space-y-1">
+                                {filterLinks().map((link, key) => (
+                                    <div key={key} className="bg-black/5 hover:bg-black/15 cursor-pointer p-2 flex flex-col gap-2 space-y-3">
+                                        <SearchItem link={link.route} text={link.name} icon={link.icon} />
+                                    </div>
+                                ))}
+                                {
+                                    filterLinks.length == 0 && <div className="flex items-center justify-center flex-col gap-2 p-3">
+                                        <Inbox size={35} className="text-[#061f46]/80"/>
+                                        <p>Aucun résultat trouvé</p>
+                                    </div>
+                                }
+                            </div>
+                        )}
+                    </div>
             </div>
             <div className="flex items-center gap-5 mr-4 *:cursor-pointer">
                 <DropdownMenu>
@@ -109,7 +164,7 @@ export default function AdminHeader() : React.ReactNode {
                         <DropdownMenuItem className="bg-black/5 hover:bg-black/15 !rounded-none">
                             <NotificationItem />
                         </DropdownMenuItem>
-                        <Button type="button" variant="secondary" className="cursor-pointer  p-4 w-full bg-[#061f46] text-white rounded-none hover:bg-[#061f46]/80">
+                        <Button type="button" variant="secondary" className="cursor-pointer p-4 w-full bg-[#061f46] text-white rounded-none hover:bg-[#061f46]/80">
                             Supprimer les notification
                         </Button>
                     </DropdownMenuContent>

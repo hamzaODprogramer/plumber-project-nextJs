@@ -14,6 +14,7 @@ import {
   Wind,
   Droplet
 } from "lucide-react";
+
 export const links : Array<{route:string,name:string,icon?: any}> = [
     { route : '/' , name : 'acceuil' , icon:  Home  },
     { route : '/about' , name : 'À propos' , icon:  Info  },
@@ -31,6 +32,16 @@ export const admin_links : Array<{route:string,name:string,icon?: any}> = [
   { route : '/admin/account' , name : 'Compte' , icon : User },
   { route : '/admn' , name : 'Déconnexion' , icon : LogOut },
 ]
+
+export const search_mapper : Array<{ route:string, key_words:Array<string>, icon?: any }> = [
+  { route: '/admin',          key_words: ['acceuil', 'statistiques', 'bienvenu', 'dashboard', 'home'] , icon : Home },
+  { route: '/admin/services', key_words: ['services', 'prestations', 'offres'] ,                        icon : ShowerHead },
+  { route: '/admin/messages', key_words: ['messages', 'chat', 'conversation', 'communication'] ,        icon : MessageCircle },
+  { route: '/admin/contact',  key_words: ['contacts', 'coordonnées', 'adresse'] ,                       icon : Contact },
+  { route: '/admin/gallery',  key_words: ['gallerie', 'images', 'photos', 'media'] ,                    icon : Images },
+  { route: '/admin/account',  key_words: ['compte', 'profil', 'utilisateur', 'paramètres'] ,            icon : User },
+  { route: '/admn',           key_words: ['déconnexion', 'logout', 'sortir', 'quitter'] ,               icon : LogOut },
+];
 
 export const example_chart_data = [
   { month: "January", desktop: 186, mobile: 80 },
