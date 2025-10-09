@@ -44,6 +44,7 @@ export default function AdminHeader() : React.ReactNode {
         
         window.addEventListener('resize', handleResize)
         
+        return () => window.removeEventListener('resize', handleResize)
     }, []);
 
     const handleMenuClick = () => {
@@ -52,15 +53,8 @@ export default function AdminHeader() : React.ReactNode {
         }
     }
 
-    // Dark Mode Section
-    const [colorMode,setColorMode] = useState<"dark" | "light">(useDarkMode().mode)
-    const [modeChanged,setModeChanged] = useState<boolean>(false)
-    const { toggleMode } = useDarkMode()
-
-    useEffect(()=>{
-        setColorMode(useDarkMode().mode)
-    },[modeChanged])
-
+    // Dark Mode Section - Call useDarkMode only ONCE
+    const { mode, toggleMode } = useDarkMode()
 
     return (
         <div className="flex items-center justify-between w-full  py-4 px-3 dark:bg-gray-800 bg-white  border-b border-black/10">
@@ -106,9 +100,9 @@ export default function AdminHeader() : React.ReactNode {
             <div className="flex items-center gap-5 mr-4 *:cursor-pointer">
                 <Bell size={48} className="p-3 bg-black/5 dark:bg-white/5 dark:text-white dark:hover:bg-white/10 hover:bg-black/10"/>
                 {
-                    (colorMode == "dark") 
-                    ? <Sun onClick={()=>{toggleMode();setModeChanged(!modeChanged)}} size={48}  className="p-3  bg-black/5 dark:bg-white/5 dark:text-white dark:hover:bg-white/10 hover:bg-black/10" />
-                    : <Moon onClick={()=>{toggleMode();setModeChanged(!modeChanged)}} size={48}  className="p-3  bg-black/5 dark:bg-white/5 dark:text-white dark:hover:bg-white/10 hover:bg-black/10" />
+                    (mode === "dark") 
+                    ? <Sun onClick={toggleMode} size={48}  className="p-3  bg-black/5 dark:bg-white/5 dark:text-white dark:hover:bg-white/10 hover:bg-black/10" />
+                    : <Moon onClick={toggleMode} size={48}  className="p-3  bg-black/5 dark:bg-white/5 dark:text-white dark:hover:bg-white/10 hover:bg-black/10" />
                 }
                 <DropdownMenu>
                     <DropdownMenuTrigger asChild>

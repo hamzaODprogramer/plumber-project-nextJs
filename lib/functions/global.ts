@@ -61,18 +61,29 @@ export function CheckingDirection(setIsRTL:any){
 }
 
 export const useDarkMode = () => {
-    const getMode = () => {
-        if (!localStorage.getItem("mode")) {
+    const [mode, setMode] = useState<'light' | 'dark'>('light');
+
+    useEffect(() => {
+        // Get initial mode from localStorage
+        const storedMode = localStorage.getItem("mode");
+        if (!storedMode) {
             localStorage.setItem('mode', 'light');
-            return 'light';
+            setMode('light');
+        } else {
+            setMode(storedMode as 'light' | 'dark');
         }
-        return localStorage.getItem("mode") as 'light' | 'dark';
-    };
+
+        if (storedMode === 'dark') {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+    }, []);
 
     const toggleMode = () => {
-        const currentMode = getMode();
-        const newMode = currentMode === 'light' ? 'dark' : 'light';
+        const newMode = mode === 'light' ? 'dark' : 'light';
         
+        setMode(newMode);
         localStorage.setItem('mode', newMode);
         
         if (newMode === 'dark') {
@@ -83,13 +94,6 @@ export const useDarkMode = () => {
         
         return newMode;
     };
-
-    const mode = getMode();
-    if (mode === 'dark') {
-        document.documentElement.classList.add('dark');
-    } else {
-        document.documentElement.classList.remove('dark');
-    }
 
     return {
         mode,
