@@ -7,7 +7,8 @@ const initialState = {
     openShowDialoge : false,
     openShowImageDialoge : false,
     openDeleteImageDialoge : false,
-    openOtpCompteAdminDialoge: false
+    openOtpCompteAdminDialoge: false,
+    sideBarVisibility : true
 }
 
 export const adminSlicer = createSlice({
@@ -34,9 +35,12 @@ export const adminSlicer = createSlice({
         },
         setOpenOtpCompteAdminDialoge: (state, action) => {
             state.openOtpCompteAdminDialoge = action.payload
-        }
+        },
+        setSideBarVisibility: (state, action) => {
+            state.sideBarVisibility = action.payload
+        },
     }
 })
 
-export const { setOpenAddDialoge , setOpenUpdateDialoge , setOpenDeleteDialoge , setOpenShowDialoge , setOpenShowImageDialoge , setOpenDeleteImageDialoge , setOpenOtpCompteAdminDialoge} = adminSlicer.actions
+export const { setOpenAddDialoge , setOpenUpdateDialoge , setOpenDeleteDialoge , setOpenShowDialoge , setOpenShowImageDialoge , setOpenDeleteImageDialoge , setOpenOtpCompteAdminDialoge , setSideBarVisibility } = adminSlicer.actions
 export default adminSlicer.reducer
