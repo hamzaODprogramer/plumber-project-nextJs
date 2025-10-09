@@ -23,6 +23,8 @@ import { admin_links } from "@/lib/constant/global";
 import Link from "next/link";
 import { CheckingDirection, useDarkMode } from "@/lib/functions/global";
 import { usePathname } from "next/navigation";
+import NotificationItem from "./notification-item";
+import { Button } from "../ui/button";
 
 export default function AdminHeader() : React.ReactNode {
     const sideBarVisibility = useSelector((action:RootState)=>action.admin.sideBarVisibility)
@@ -53,7 +55,7 @@ export default function AdminHeader() : React.ReactNode {
         }
     }
 
-    // Dark Mode Section - Call useDarkMode only ONCE
+    // Dark Mode Section 
     const { mode, toggleMode } = useDarkMode()
 
     return (
@@ -95,10 +97,24 @@ export default function AdminHeader() : React.ReactNode {
                     <Search size={20} className="text-[rgb(6,31,70)] dark:text-white opacity-50"/>
                 </div>
             </div>
-            
-
             <div className="flex items-center gap-5 mr-4 *:cursor-pointer">
-                <Bell size={48} className="p-3 bg-black/5 dark:bg-white/5 dark:text-white dark:hover:bg-white/10 hover:bg-black/10"/>
+                <DropdownMenu>
+                    <DropdownMenuTrigger asChild>
+                        <Bell size={48} className="p-3 bg-black/5 dark:bg-white/5 dark:text-white dark:hover:bg-white/10 hover:bg-black/10"/>
+                    </DropdownMenuTrigger>
+                    <DropdownMenuContent className="!rounded-none !dark:bg-gray-600 space-y-1 *:cursor-pointer">
+                        <DropdownMenuItem className="bg-black/5 hover:bg-black/45 !rounded-none">
+                            <NotificationItem />
+                        </DropdownMenuItem>
+                        <DropdownMenuItem className="bg-black/5 hover:bg-black/15 !rounded-none">
+                            <NotificationItem />
+                        </DropdownMenuItem>
+                        <Button type="button" variant="secondary" className="cursor-pointer  p-4 w-full bg-[#061f46] text-white rounded-none hover:bg-[#061f46]/80">
+                            Supprimer les notification
+                        </Button>
+                    </DropdownMenuContent>
+                </DropdownMenu>
+                
                 {
                     (mode === "dark") 
                     ? <Sun onClick={toggleMode} size={48}  className="p-3  bg-black/5 dark:bg-white/5 dark:text-white dark:hover:bg-white/10 hover:bg-black/10" />
@@ -111,7 +127,7 @@ export default function AdminHeader() : React.ReactNode {
                             <p className="text-black/80 dark:text-white  font-semibold">FR</p>
                         </div>
                     </DropdownMenuTrigger>
-                    <DropdownMenuContent className="!rounded-none !dark:bg-gray-600">
+                    <DropdownMenuContent className="!rounded-none !dark:bg-gray-600 space-y-1 *:cursor-pointer">
                         <DropdownMenuItem>
                             <div className="flex items-center gap-2.5  ">
                                 <Image className="rounded-full" width={18} height={18} src="/francelg.png" alt="lang" />
