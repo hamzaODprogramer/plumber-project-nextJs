@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Bell, Menu, Search, Sun } from "lucide-react";
+import { Bell, Menu, Moon, Search, Sun } from "lucide-react";
 import Image from "next/image";
 import {
   DropdownMenu,
@@ -21,7 +21,7 @@ import {
 } from "@/components/ui/drawer"
 import { admin_links } from "@/lib/constant/global";
 import Link from "next/link";
-import { CheckingDirection } from "@/lib/functions/global";
+import { CheckingDirection, useDarkMode } from "@/lib/functions/global";
 import { usePathname } from "next/navigation";
 
 export default function AdminHeader() : React.ReactNode {
@@ -32,6 +32,7 @@ export default function AdminHeader() : React.ReactNode {
     const [isRTL, setIsRTL] = useState<boolean>(false)
     CheckingDirection(setIsRTL)
     
+    // Document Size State
     const [clientWidth,setClientWidth] = useState(0)
 
     useEffect(() => {
@@ -50,6 +51,16 @@ export default function AdminHeader() : React.ReactNode {
             dispatch(setSideBarVisibility(!sideBarVisibility))
         }
     }
+
+    // Dark Mode Section
+    const [colorMode,setColorMode] = useState<"dark" | "light">(useDarkMode().mode)
+    const [modeChanged,setModeChanged] = useState<boolean>(false)
+    const { toggleMode } = useDarkMode()
+
+    useEffect(()=>{
+        setColorMode(useDarkMode().mode)
+    },[modeChanged])
+
 
     return (
         <div className="flex items-center justify-between w-full  py-4 px-3 dark:bg-gray-800 bg-white  border-b border-black/10">
@@ -94,7 +105,11 @@ export default function AdminHeader() : React.ReactNode {
 
             <div className="flex items-center gap-5 mr-4 *:cursor-pointer">
                 <Bell size={48} className="p-3 bg-black/5 dark:bg-white/5 dark:text-white dark:hover:bg-white/10 hover:bg-black/10"/>
-                <Sun size={48}  className="p-3  bg-black/5 dark:bg-white/5 dark:text-white dark:hover:bg-white/10 hover:bg-black/10" />
+                {
+                    (colorMode == "dark") 
+                    ? <Sun onClick={()=>{toggleMode();setModeChanged(!modeChanged)}} size={48}  className="p-3  bg-black/5 dark:bg-white/5 dark:text-white dark:hover:bg-white/10 hover:bg-black/10" />
+                    : <Moon onClick={()=>{toggleMode();setModeChanged(!modeChanged)}} size={48}  className="p-3  bg-black/5 dark:bg-white/5 dark:text-white dark:hover:bg-white/10 hover:bg-black/10" />
+                }
                 <DropdownMenu>
                     <DropdownMenuTrigger asChild>
                         <div className="flex items-center gap-2.5 p-2.5 dark:bg-white/5 bg-black/5 dark:hover:bg-white/10 hover:bg-black/10">

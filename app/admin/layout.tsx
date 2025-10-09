@@ -8,7 +8,7 @@ export default function AdminLayout({children}:Readonly<{children:React.ReactNod
     const sideBarVisibility = useSelector((action:RootState)=>action.admin.sideBarVisibility)
     
     return (
-        <div className="flex h-screen bg-black/5 dark:bg-gray-700 light">
+        <div className="flex h-screen bg-black/5 dark:bg-gray-700">
             {sideBarVisibility && <SideBar />}
             <div className="flex-1 flex flex-col">
                 <AdminHeader />

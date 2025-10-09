@@ -59,3 +59,40 @@ export function CheckingDirection(setIsRTL:any){
         };
     }, [])
 }
+
+export const useDarkMode = () => {
+    const getMode = () => {
+        if (!localStorage.getItem("mode")) {
+            localStorage.setItem('mode', 'light');
+            return 'light';
+        }
+        return localStorage.getItem("mode") as 'light' | 'dark';
+    };
+
+    const toggleMode = () => {
+        const currentMode = getMode();
+        const newMode = currentMode === 'light' ? 'dark' : 'light';
+        
+        localStorage.setItem('mode', newMode);
+        
+        if (newMode === 'dark') {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+        
+        return newMode;
+    };
+
+    const mode = getMode();
+    if (mode === 'dark') {
+        document.documentElement.classList.add('dark');
+    } else {
+        document.documentElement.classList.remove('dark');
+    }
+
+    return {
+        mode,
+        toggleMode
+    };
+};

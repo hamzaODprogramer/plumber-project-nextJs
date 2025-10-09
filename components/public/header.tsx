@@ -42,7 +42,7 @@ export default function Header() : JSX.Element {
             <Button icon={<Menu size={28} color="black" className="cursor-pointer"/>} />
           </div>  
         </DrawerTrigger>
-        <DrawerContent>
+        <DrawerContent className="!rounded-none">
           <DrawerHeader className="hidden">
             <DrawerTitle></DrawerTitle>
           </DrawerHeader>
