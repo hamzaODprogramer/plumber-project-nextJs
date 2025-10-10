@@ -143,9 +143,9 @@ export default function AdminHeader() : React.ReactNode {
                                     </div>
                                 ))}
                                 {
-                                    filterLinks.length == 0 && <div className="flex items-center justify-center flex-col gap-2 p-3">
+                                    filterLinks().length == 0 && <div className="flex items-center justify-center flex-col gap-2 p-3">
                                         <Inbox size={35} className="text-[#061f46]/80"/>
-                                        <p>Aucun résultat trouvé</p>
+                                        <p className="text-[#061f46]/80 font-medium">Aucun résultat trouvé</p>
                                     </div>
                                 }
                             </div>
