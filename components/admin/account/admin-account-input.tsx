@@ -1,17 +1,28 @@
-import React from "react";
+import React from 'react';
 
-export default function AdminAccountInput({type,placeholder,text,className}:{type:string,placeholder:string,text:string,className?:string}) : React.ReactNode {
-    return <div className={`flex flex-col w-full  justify-start pt-0 pb-2 gap-1 ${className}`}>
-      <label 
-        className="text-black/95 font-medium dark:text-white"
-
-      >
+export default function AdminAccountInput({
+  type,
+  placeholder,
+  text,
+  className,
+}: {
+  type: string;
+  placeholder: string;
+  text: string;
+  className?: string;
+}): React.ReactNode {
+  return (
+    <div
+      className={`flex flex-col w-full  justify-start pt-0 pb-2 gap-1 ${className}`}
+    >
+      <label className="text-black/95 font-medium dark:text-white">
         {text}
       </label>
-      <input 
+      <input
         type={type}
         placeholder={placeholder}
         className="flex-1 focus:ring-3 border-1 border-black/20 transition-all duration-500 focus:ring-blue-300 bg-black/5 dark:bg-white/5 dark:text-white p-2 font-normal outline-none w-full"
-      />            
+      />
     </div>
+  );
 }
