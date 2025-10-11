@@ -68,7 +68,7 @@ A modern, multilingual plumbing services web application built with Next.js 15, 
 1. **Clone the repository**
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/hamzaODprogramer/plumber-project-nextJs.git
 cd plumber-project-nextjs
 ```
 
@@ -121,7 +121,7 @@ npm run start
 npm run lint
 ```
 
-## 🌍 Internationalization (i18n)
+## 🌍 Internationalization
 
 The application supports:
 
@@ -129,6 +129,7 @@ The application supports:
 - **Arabic (AR)** - RTL (Right-to-Left) support
 
 Language switching is available in the navigation menu.
+
 
 ## 🔒 Admin Access
 
@@ -195,17 +196,10 @@ Add new slices in the `store/slices` directory and configure in `store/store.ts`
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
 
-## 📝 License
-
-This project is private and proprietary.
 
 ## 🐛 Known Issues
 
 - None currently reported
-
-## 📞 Support
-
-For support, please contact the development team or open an issue in the repository.
 
 ## 🔮 Future Enhancements
 
@@ -213,7 +207,6 @@ For support, please contact the development team or open an issue in the reposit
 - [ ] Payment integration
 - [ ] Customer portal
 - [ ] Mobile app
-- [ ] Real-time notifications
 - [ ] Advanced analytics dashboard
 
 ---
