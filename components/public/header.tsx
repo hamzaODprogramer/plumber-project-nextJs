@@ -19,9 +19,11 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
-import { links } from '@/lib/constant/global';
+import { getLinks } from '@/lib/constant/global';
 import { usePathname } from 'next/navigation';
 import { CheckingDirection, useTranslation } from '@/lib/functions/global';
+import { useSelector } from 'react-redux';
+import { RootState } from '@/lib/store/store';
 
 export default function Header(): JSX.Element {
   const [isRTL, setIsRTL] = useState<boolean>(false);
@@ -31,16 +33,14 @@ export default function Header(): JSX.Element {
 
   // Multilingua Logic Section
   const { changeLanguage ,language } = useTranslation()
-  const [lang,setLang] = useState(language)
+  const lang : "fr" | "ar" = useSelector((state:RootState)=> state.admin.lang) as "fr" | "ar"
+  const links = getLinks(lang);
 
-  useEffect(() => {
-    setLang(language)
-  }, [language])
   
 
   return (
     <>
-      <nav className={`fixed top-0 w-full shadow-lg shadow-black/20  z-50 bg-white flex items-center ${isRTL ? 'pl-5 pr-1' : 'pl-1 pr-20'}  lg:pl-20 lg:pr-20 h-fit py-3`}>
+      <nav className={`fixed top-0 w-full shadow-lg shadow-black/20  z-50 bg-white flex items-center ${isRTL ? 'pl-5 pr-1' : 'pl-1 pr-20'}  lg:pl-20 lg:pr-20 h-fit py-3.5`}>
         <Image
           className="mb-0"
           width={90}
@@ -48,11 +48,11 @@ export default function Header(): JSX.Element {
           src="/logo2.png"
           alt="logo"
         ></Image>
-        <div className="hidden md:flex md:gap-3 lg:gap-8 xl:gap-10 items-center md:ml-4 lg:ml-10 mr-5 gap-8 *:font-[Poppins] *:transition-colors duration-500 ease-linear ">
-          {links.map((link, id) => {
+        <div className="hidden md:flex md:gap-3 lg:gap-8 xl:gap-10 items-center md:ml-4 lg:ml-10 mr-5 gap-8  *:transition-colors duration-500 ease-linear ">
+          {links.map((link) => {
             return (
               <Link
-                key={id}
+                key={link.route}
                 className={`uppercase font-semibold  ${pathname == link.route ? 'text-blue-500' : 'text-blue-950 hover:text-blue-500'}`}
                 href={link.route}
               >

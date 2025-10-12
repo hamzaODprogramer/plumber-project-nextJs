@@ -14,21 +14,20 @@ export default function ServiceCard({ icon }: service_cardPros): JSX.Element {
         Réparation de tuyaux de toilettes
       </p>
       <p className="mt-6 text-md text-black/60 font-semibold">
-        Avec une longue expérience dans le domaine, <b>Jaouad OD</b> vous
-        propose des réparation ou entretien
+        {translations[lang].ServiceCard_Description}
       </p>
       <div className="mt-6 space-y-3 *:flex *:items-center *:gap-4 *:font-semibold *:text-[18px] *:text-[#184d88]">
         <div>
           <Check size={18} color="green" strokeWidth={5} />
-          <p>Service de qualité</p>
+          <p>{translations[lang].ServiceCard_Point_1}</p>
         </div>
         <div>
           <Check size={18} color="green" strokeWidth={5} />
-          <p>client satisfait</p>
+          <p>{translations[lang].ServiceCard_Point_2}</p>
         </div>
         <div>
           <Check size={18} color="green" strokeWidth={5} />
-          <p>soutien 6/20</p>
+          <p>{translations[lang].ServiceCard_Point_3}</p>
         </div>
       </div>
     </div>

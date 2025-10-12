@@ -5,7 +5,7 @@ const translations = {
     A_propos_Titre_principal:
       'Votre plombier de confiance depuis plus de 20 ans',
     A_propos_Texte_description:
-      'Avec une longue expérience dans le domaine, Jaouad OD vous propose des solutions rapides et durables pour tous vos besoins en plomberie. Installation, réparation ou entretien — nous garantissons un service fiable et professionnel.',
+      'Avec une longue expérience dans le domaine, Jaouad OD vous propose des solutions rapides et durables pour tous vos besoins en plomberie. Installation, réparation ou entretien – nous garantissons un service fiable et professionnel.',
     A_propos_Service_residentiel_commercial:
       'Plomberie résidentielle et commerciale',
     A_propos_Service_rapide_fiable:
@@ -17,7 +17,7 @@ const translations = {
     /* === Formulaire de contact (ContactForm) === */
     Formulaire_contact_Titre: 'Contact Nous',
     Formulaire_contact_Votre_Nom: 'Votre Nom',
-    Formulaire_contact_Selectionnez_un_service: 'Selectionnez une service',
+    Formulaire_contact_Selectionnez_un_service: 'Sélectionnez un service',
     Formulaire_contact_Service_1: 'service 1',
     Formulaire_contact_Service_2: 'service 2',
     Formulaire_contact_Votre_Email: 'Votre Email',
@@ -56,7 +56,7 @@ const translations = {
 
     Footer_Bulletin: 'Bulletin',
     Footer_Bulletin_Description:
-      'La douleur est de l’amour, juste de l’amour, le clitoris lui-même est de l’amour.',
+      'Restez informé de nos actualités et offres spéciales.',
     Footer_Bulletin_Input_Placeholder: 'Votre email',
     Footer_Bulletin_Bouton: 'Envoyer',
 
@@ -70,7 +70,7 @@ const translations = {
     Header_Lien_A_Propos: 'À propos',
     Header_Lien_Contact: 'Contact',
     Header_Developpeur: 'Développé par Hamza OUADOUD',
-    Header_Logo_Alt: 'Logo de l’entreprise',
+    Header_Logo_Alt: "Logo de l'entreprise",
 
     /* === Numbers === */
     Numbers_Annees_experience: "Des années d'expérience",
@@ -85,7 +85,7 @@ const translations = {
     /* === SuperSection === */
     SuperSection_Titre: 'Solutions plomberie pour tous',
     SuperSection_Description:
-      'Avec plus de 20 ans d’expérience, Jaouad OD vous offre des services fiables : réparation de fuites, installation de tuyauterie, entretien et dépannage.',
+      "Avec plus de 20 ans d'expérience, Jaouad OD vous offre des services fiables : réparation de fuites, installation de tuyauterie, entretien et dépannage.",
     SuperSection_Appeler_maintenant: 'Appeler maintenant',
     SuperSection_Voir_nos_services: 'Voir nos services',
 
@@ -102,12 +102,12 @@ const translations = {
     /* === ContactPage === */
     ContactPage_Titre: 'Contact',
     ContactPage_Description:
-      'Contactez-nous dès aujourd’hui pour toute question, devis ou urgence. Nous sommes disponibles 12/6 pour vous aider.',
+      "Contactez-nous dès aujourd'hui pour toute question, devis ou urgence. Nous sommes disponibles 12/6 pour vous aider.",
 
     /* === GalleryPage === */
-    GalleryPage_Title: 'Gallerie',
+    GalleryPage_Title: 'Galerie',
     GalleryPage_Description:
-      'Découvrez quelques-uns de nos travaux en plomberie, allant des petites réparations aux grands projets d’installation.',
+      "Découvrez quelques-uns de nos travaux en plomberie, allant des petites réparations aux grands projets d'installation.",
     GalleryPage_Section_Label: 'Nos réalisations en images',
     GalleryPage_Section_Header: 'Galerie de nos travaux',
 
@@ -117,56 +117,56 @@ const translations = {
       'Nous proposons une large gamme de services de plomberie adaptés aux besoins des particuliers et des entreprises.',
 
     /* === Login === */
-    Login_Welcome: 'Bienvenu dans votre compte',
+    Login_Welcome: 'Bienvenue dans votre compte',
     Login_Username_Placeholder: "Nom d'utilisateur",
-    Login_Password_Placeholder: 'Mote de passe',
-    Login_ForgotPassword: "J'ai oublié le mote de passe ?",
-    Login_Button_Text: 'connexion',
+    Login_Password_Placeholder: 'Mot de passe',
+    Login_ForgotPassword: "J'ai oublié le mot de passe ?",
+    Login_Button_Text: 'Connexion',
 
     /* === NewPassword === */
-    NewPassword_Title: 'Entrer le nouveau mote de passe',
-    NewPassword_NewPassword_Placeholder: 'Nouveau mote de passe',
-    NewPassword_ConfirmPassword_Placeholder: 'Confirmer le mote de passe',
-    NewPassword_Login_Link: 'connexion',
-    NewPassword_Button_Text: 'reinstaller',
+    NewPassword_Title: 'Entrez le nouveau mot de passe',
+    NewPassword_NewPassword_Placeholder: 'Nouveau mot de passe',
+    NewPassword_ConfirmPassword_Placeholder: 'Confirmer le mot de passe',
+    NewPassword_Login_Link: 'Connexion',
+    NewPassword_Button_Text: 'Réinstaller',
 
     /* === ResetPassword === */
-    ResetPassword_Title: 'Entrer votre email pour récuperer votre compte',
+    ResetPassword_Title: 'Entrez votre email pour récupérer votre compte',
     ResetPassword_Email_Placeholder: 'Votre Email',
-    ResetPassword_Login_Link: 'connexion',
-    ResetPassword_Button_Text: 'Récuperer',
+    ResetPassword_Login_Link: 'Connexion',
+    ResetPassword_Button_Text: 'Récupérer',
 
     /* === ImageItem === */
     ImageItem_Dialog_Title: 'Image',
     ImageItem_Dialog_Close_Button: 'Fermer',
-    ImageItem_Alert_Title: 'Vous etes sûr ?',
+    ImageItem_Alert_Title: 'Êtes-vous sûr ?',
     ImageItem_Alert_Description:
-      'Cette action sera supprimer de maniere permanent ce image',
-    ImageItem_Alert_Cancel: 'Anuller',
-    ImageItem_Alert_Confirm: 'Continue',
+      'Cette action supprimera définitivement cette image',
+    ImageItem_Alert_Cancel: 'Annuler',
+    ImageItem_Alert_Confirm: 'Continuer',
 
     /* === MessageClient === */
-    MessageClient_Text_Placeholder: 'Reponse ...',
-    MessageClient_Button_Text: 'Reponder',
+    MessageClient_Text_Placeholder: 'Réponse ...',
+    MessageClient_Button_Text: 'Répondre',
 
     /* === AddService === */
-    AddService_Title: 'Ajouter une service',
+    AddService_Title: 'Ajouter un service',
     AddService_Description:
-      'Remplir toutes les champs pour ajouter une services',
+      'Remplissez tous les champs pour ajouter un service',
     AddService_Input_Service_Label: 'Service',
-    AddService_Input_Service_Placeholder: 'Nom de Service',
-    AddService_Select_Icon_Label: 'Icon',
-    AddService_Select_Icon_Placeholder: 'Selectionnez une icon',
+    AddService_Input_Service_Placeholder: 'Nom du Service',
+    AddService_Select_Icon_Label: 'Icône',
+    AddService_Select_Icon_Placeholder: 'Sélectionnez une icône',
     AddService_TextArea_Description_Label: 'Description',
-    AddService_TextArea_Description_Placeholder: 'Entrer une description',
+    AddService_TextArea_Description_Placeholder: 'Entrez une description',
     AddService_Close_Button: 'Fermer',
 
     /* === DeleteService === */
-    DeleteService_Title: 'Vous etes sûr ?',
+    DeleteService_Title: 'Êtes-vous sûr ?',
     DeleteService_Description:
-      'Cette action sera supprimer de maniere permanent ce service',
-    DeleteService_Cancel: 'Anuller',
-    DeleteService_Confirm: 'Continue',
+      'Cette action supprimera définitivement ce service',
+    DeleteService_Cancel: 'Annuler',
+    DeleteService_Confirm: 'Continuer',
 
     /* === ShowService === */
     ShowService_Title: 'service.name',
@@ -176,30 +176,30 @@ const translations = {
     /* === UpdateService === */
     UpdateService_Title: 'Modifier le service',
     UpdateService_Description:
-      'Remplir les champs que tu veux pour modifier ce services',
+      'Remplissez les champs que vous voulez modifier pour ce service',
     UpdateService_Input_Service_Label: 'Service',
-    UpdateService_Input_Service_Placeholder: 'Nom de Service',
-    UpdateService_Select_Icon_Label: 'Icon',
-    UpdateService_Select_Icon_Placeholder: 'Selectionnez une icon',
+    UpdateService_Input_Service_Placeholder: 'Nom du Service',
+    UpdateService_Select_Icon_Label: 'Icône',
+    UpdateService_Select_Icon_Placeholder: 'Sélectionnez une icône',
     UpdateService_TextArea_Description_Label: 'Description',
-    UpdateService_TextArea_Description_Placeholder: 'Entrer une description',
+    UpdateService_TextArea_Description_Placeholder: 'Entrez une description',
     UpdateService_Close_Button: 'Fermer',
 
     /* === AdminHeader === */
     AdminHeader_Search_Placeholder: 'Recherche',
     AdminHeader_NoResults: 'Aucun résultat trouvé',
-    AdminHeader_ClearNotifications: 'Supprimer les notification',
-    AdminHeader_Language_FR: 'francais',
+    AdminHeader_ClearNotifications: 'Supprimer les notifications',
+    AdminHeader_Language_FR: 'Français',
     AdminHeader_Language_AR: 'العربية',
 
     /* === OtpCheck === */
     OtpCheck_Title: 'Entrez le code de vérification',
     OtpCheck_Description:
       'Nous avons envoyé un code à 6 chiffres à votre adresse e-mail.',
-    OtpCheck_Verification_Label: 'Verification Code',
+    OtpCheck_Verification_Label: 'Code de vérification',
     OtpCheck_Instructions:
       'Saisissez le code à 6 chiffres envoyé à votre e-mail.',
-    OtpCheck_Button_Text: 'Verifier',
+    OtpCheck_Button_Text: 'Vérifier',
 
     /* === SideBar === */
     SideBar_Menu_Label: 'Menu',
@@ -209,25 +209,25 @@ const translations = {
     AdminAccount_Page_Title: 'Compte',
     AdminAccount_Table_Title: 'Gestion de Compte',
     AdminAccount_Input_Username_Label: "Nom d'utilisateur",
-    AdminAccount_Input_Username_Placeholder: "Entrer le nom d'utilisateur",
+    AdminAccount_Input_Username_Placeholder: "Entrez le nom d'utilisateur",
     AdminAccount_Input_Email_Label: 'Email',
-    AdminAccount_Input_Email_Placeholder: "Entrer l'email",
-    AdminAccount_Input_Password_Label: 'Mots de passe',
-    AdminAccount_Input_Password_Placeholder: 'Entrer le mots de passe',
+    AdminAccount_Input_Email_Placeholder: "Entrez l'email",
+    AdminAccount_Input_Password_Label: 'Mot de passe',
+    AdminAccount_Input_Password_Placeholder: 'Entrez le mot de passe',
     AdminAccount_Button_Save: 'Enregistrer',
 
     /* === AdminContact === */
     AdminContact_Page_Title: 'Contacts',
     AdminContact_Table_Title: 'Liste des contacts',
-    AdminContact_Input_Phone_Placeholder: 'Numéro de telephone',
-    AdminContact_Input_Facebook_Placeholder: 'Lien de facebook',
+    AdminContact_Input_Phone_Placeholder: 'Numéro de téléphone',
+    AdminContact_Input_Facebook_Placeholder: 'Lien Facebook',
     AdminContact_Input_Email_Placeholder: 'Adresse email',
-    AdminContact_Input_Twitter_Placeholder: 'Lien de compte X',
-    AdminContact_Input_Youtube_Placeholder: 'Lien de chaine youtube',
+    AdminContact_Input_Twitter_Placeholder: 'Lien du compte X',
+    AdminContact_Input_Youtube_Placeholder: 'Lien de la chaîne YouTube',
     AdminContact_Input_Address_Placeholder: 'Adresse',
 
     /* === AdminGallery === */
-    AdminGallery_Page_Title: 'Gallerie',
+    AdminGallery_Page_Title: 'Galerie',
     AdminGallery_Table_Title: 'Liste des Images',
 
     /* === AdminMessages === */
@@ -236,27 +236,77 @@ const translations = {
     /* === AdminService === */
     AdminService_Page_Title: 'Services',
     AdminService_Table_Title: 'Liste des Services',
-    AdminService_Table_Header_Name: 'Nom de services',
+    AdminService_Table_Header_Name: 'Nom du service',
     AdminService_Table_Header_Description: 'Description',
-    AdminService_Table_Header_Icon: 'Icon',
+    AdminService_Table_Header_Icon: 'Icône',
     AdminService_Table_Header_Action: 'Action',
 
     /* === HomeDashborad === */
-    HomeDashborad_Welcome: 'Bienvenu JAOUAD OUADOUD',
+    HomeDashborad_Welcome: 'Bienvenue JAOUAD OUADOUD',
     HomeDashborad_Admin_Description:
       "Vous êtes connecté en tant qu'administrateur. Depuis ce tableau de bord, vous pouvez gérer les services, les projets, consulter les messages des clients et suivre les statistiques globales.",
     HomeDashborad_Messages: 'Messages',
     HomeDashborad_Services: 'Services',
-    HomeDashborad_Monthly_Stats_Title: 'Statistiques Mensuelles des message',
+    HomeDashborad_Monthly_Stats_Title: 'Statistiques mensuelles des messages',
     HomeDashborad_Messages_Count: '500',
     HomeDashborad_Services_Count: '500',
-    HomeDashborad_Messages_Chart_Name: 'Nombre des Messages',
+    HomeDashborad_Messages_Chart_Name: 'Nombre de messages',
+
+    /* === ServiceCard === */
+    "ServiceCard_Description": "Avec une longue expérience dans le domaine, Jaouad OD vous propose des réparations ou un entretien.",
+    "ServiceCard_Point_1": "Service de qualité",
+    "ServiceCard_Point_2": "Client satisfait",
+    "ServiceCard_Point_3": "Soutien 6/20",
+
+    // Admin links
+    admin_acceuil: 'Accueil',
+    admin_services: 'Services',
+    messages: 'Messages',
+    contacts: 'Contacts',
+    gallerie: 'Galerie',
+    compte: 'Compte',
+    deconnexion: 'Déconnexion',
+    
+    // Search keywords
+    statistiques: 'statistiques',
+    bienvenu: 'bienvenu',
+    dashboard: 'dashboard',
+    prestations: 'prestations',
+    offres: 'offres',
+    chat: 'chat',
+    conversation: 'conversation',
+    communication: 'communication',
+    coordonnees: 'coordonnées',
+    adresse: 'adresse',
+    photos: 'photos',
+    media: 'media',
+    profil: 'profil',
+    utilisateur: 'utilisateur',
+    parametres: 'paramètres',
+    logout: 'logout',
+    sortir: 'sortir',
+    quitter: 'quitter',
+    
+    // Plumbing icons
+    douche: 'Douche',
+    gouttes_eau: "Gouttes d'eau",
+    goutte: 'Goutte',
+    vagues: 'Vagues',
+    baignoire: 'Baignoire',
+    cle: 'Clé',
+    marteau: 'Marteau',
+    reglages: 'Réglages',
+    jauge: 'Jauge',
+    thermometre: 'Thermomètre',
+    flamme: 'Flamme',
+    vent_air: 'Vent/Air',
+    pipette: 'Pipette',
   },
 
   ar: {
     /* === A propos (AboutUS) === */
     A_propos_de_nous: 'معلومات عنا',
-    A_propos_Titre_principal: 'سباكك الموثوق منذ أكثر من 20 عامًا',
+    A_propos_Titre_principal: 'سباكك الموثوق دائمًا منذ أكثر من 20 عامًا',
     A_propos_Texte_description:
       'بفضل خبرة طويلة في هذا المجال، يقدم لك Jaouad OD حلولًا سريعة ودائمة لجميع احتياجاتك في السباكة. تركيب أو إصلاح أو صيانة — نضمن لك خدمة موثوقة ومهنية.',
     A_propos_Service_residentiel_commercial: 'السباكة السكنية والتجارية',
@@ -307,7 +357,7 @@ const translations = {
 
     Footer_Bulletin: 'النشرة الإخبارية',
     Footer_Bulletin_Description:
-      'الألم هو الحب، فقط الحب، فحتى الإحساس ذاته هو حب.',
+      'كن على اطلاع دائم بآخر عروضنا ونصائحنا في عالم السباكة.',
     Footer_Bulletin_Input_Placeholder: 'بريدك الإلكتروني',
     Footer_Bulletin_Bouton: 'إرسال',
 
@@ -336,7 +386,7 @@ const translations = {
     /* === SuperSection === */
     SuperSection_Titre: 'حلول السباكة للجميع',
     SuperSection_Description:
-      'بفضل أكثر من 20 سنة من الخبرة، يقدم لك جواد وعدود خدمات موثوقة: إصلاح التسربات، تركيب الأنابيب، الصيانة والإصلاح.',
+      'بفضل أكثر من 20 سنة من الخبرة، يقدم لك جواد وعدود خدمات سباكة موثوقة : إصلاح التسربات، تركيب الأنابيب، والصيانة الدورية و الكثير من الخدمات . نضمن حلولاً سريعة وعملية، استخدام مواد ذات جودة، واحترام مواعيد العمل مع متابعة بعد الإنتهاء لضمان رضاك.',
     SuperSection_Appeler_maintenant: 'اتصل الآن',
     SuperSection_Voir_nos_services: 'عرض خدماتنا',
 
@@ -348,7 +398,7 @@ const translations = {
     /* === AboutPage === */
     AboutPage_Titre: 'من نحن',
     AboutPage_Description:
-      'أولويتنا هي ضمان رضا عملائنا من خلال عمل متقن، خدمة موثوقة وأسعار تنافسية.',
+      'أولويتنا هي ضمان رضا عملائنا من خلال عمل متقن، خدمة موثوقة، وأسعار تنافسية، مع التزامنا بالجودة في كل تفاصيل العمل والاستجابة السريعة لكل احتياجاتكم.',
 
     /* === ContactPage === */
     ContactPage_Titre: 'اتصل بنا',
@@ -365,7 +415,7 @@ const translations = {
     /* === ServicesPage === */
     ServicesPage_Title: 'الخدمات',
     ServicesPage_Description:
-      'نقدم مجموعة واسعة من خدمات السباكة لتلبية احتياجات الأفراد والشركات.',
+      'نقدم مجموعة واسعة من خدمات السباكة لتلبية احتياجات الأفراد والشركات، بدءًا من الإصلاحات المنزلية البسيطة إلى المشاريع الكبيرة الخاصة بالمباني والمرافق التجارية.',
 
     /* === Login === */
     Login_Welcome: 'مرحباً بك في حسابك',
@@ -498,6 +548,57 @@ const translations = {
     HomeDashborad_Messages_Count: '500',
     HomeDashborad_Services_Count: '500',
     HomeDashborad_Messages_Chart_Name: 'عدد الرسائل',
+
+    /* === ServiceCard === */
+    "ServiceCard_Titre": "إصلاح أنابيب المراحيض",
+    "ServiceCard_Description": "بفضل الخبرة الطويلة في هذا المجال، يقدم لك جواد وعدود خدمات الإصلاح أو الصيانة.",
+    "ServiceCard_Point_1": "خدمة ذات جودة",
+    "ServiceCard_Point_2": "عميل راضٍ",
+    "ServiceCard_Point_3": "دعم 6/20",
+
+    // Admin links
+    admin_acceuil: 'الرئيسية',
+    admin_services: 'الخدمات',
+    messages: 'الرسائل',
+    contacts: 'جهات الاتصال',
+    gallerie: 'المعرض',
+    compte: 'الحساب',
+    deconnexion: 'تسجيل الخروج',
+    
+    // Search keywords
+    statistiques: 'إحصائيات',
+    bienvenu: 'مرحبا',
+    dashboard: 'لوحة التحكم',
+    prestations: 'خدمات',
+    offres: 'عروض',
+    chat: 'محادثة',
+    conversation: 'محادثة',
+    communication: 'تواصل',
+    coordonnees: 'معلومات الاتصال',
+    adresse: 'عنوان',
+    photos: 'صور',
+    media: 'وسائط',
+    profil: 'الملف الشخصي',
+    utilisateur: 'مستخدم',
+    parametres: 'إعدادات',
+    logout: 'خروج',
+    sortir: 'خروج',
+    quitter: 'مغادرة',
+    
+    // Plumbing icons
+    douche: 'دش',
+    gouttes_eau: 'قطرات ماء',
+    goutte: 'قطرة',
+    vagues: 'أمواج',
+    baignoire: 'حوض استحمام',
+    cle: 'مفتاح ربط',
+    marteau: 'مطرقة',
+    reglages: 'إعدادات',
+    jauge: 'مقياس',
+    thermometre: 'ميزان حرارة',
+    flamme: 'لهب',
+    vent_air: 'هواء',
+    pipette: 'قطارة',
   },
 };
 

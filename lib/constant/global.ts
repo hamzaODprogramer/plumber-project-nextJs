@@ -25,15 +25,16 @@ import {
   Wind,
   Droplet,
 } from 'lucide-react';
+import translations from '../translation/main';
 
 
 
-export const links: Array<{ route: string; name: string; icon?: any }> = [
-  { route: '/', name: 'acceuil', icon: Home },
-  { route: '/about', name: 'À propos', icon: Info },
-  { route: '/services', name: 'nos services', icon: ShowerHead },
-  { route: '/contact', name: 'contact', icon: Contact },
-  { route: '/gallery', name: 'Galerie', icon: Images },
+export const getLinks = (lang : "fr" | "ar") : Array<{ route: string; name: string; icon?: any }> => [
+  { route: '/', name: translations[lang]['Header_Lien_Accueil'], icon: Home },
+  { route: '/about', name: translations[lang]['Header_Lien_A_Propos'], icon: Info },
+  { route: '/services', name: translations[lang]['Header_Lien_Services'], icon: ShowerHead },
+  { route: '/contact', name: translations[lang]['Header_Lien_Contact'], icon: Contact },
+  { route: '/gallery', name: translations[lang]['gallerie'], icon: Images },
 ];
 
 export const admin_links: Array<{ route: string; name: string; icon?: any }> = [
