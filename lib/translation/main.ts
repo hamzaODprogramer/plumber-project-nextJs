@@ -2,14 +2,10 @@ const translations = {
   fr: {
     /* === A propos (AboutUS) === */
     A_propos_de_nous: 'À propos de nous',
-    A_propos_Titre_principal:
-      'Votre plombier de confiance depuis plus de 20 ans',
-    A_propos_Texte_description:
-      'Avec une longue expérience dans le domaine, Jaouad OD vous propose des solutions rapides et durables pour tous vos besoins en plomberie. Installation, réparation ou entretien – nous garantissons un service fiable et professionnel.',
-    A_propos_Service_residentiel_commercial:
-      'Plomberie résidentielle et commerciale',
-    A_propos_Service_rapide_fiable:
-      'Des services rapides et fiables à des prix équitables',
+    A_propos_Titre_principal: 'Votre plombier de confiance depuis plus de 20 ans',
+    A_propos_Texte_description: 'Avec une longue expérience dans le domaine, Jaouad OD vous propose des solutions rapides et durables pour tous vos besoins en plomberie. Installation, réparation ou entretien – nous garantissons un service fiable et professionnel.',
+    A_propos_Service_residentiel_commercial: 'Plomberie résidentielle et commerciale',
+    A_propos_Service_rapide_fiable: 'Des services rapides et fiables à des prix équitables',
     A_propos_Service_urgence: "Disponible pour les réparations d'urgence",
     A_propos_Appelez_moi: 'Appelez-moi',
     Numero_telephone_principal: '+212 621 389 558',
@@ -27,8 +23,7 @@ const translations = {
     /* === Page Contact (Contact) === */
     Contact_Entrer_en_contact: 'Entrer en contact',
     Contact_Titre_principal: 'Contact pour toute question',
-    Contact_Texte_description:
-      'Remplissez le formulaire ci-dessous ou retrouvez-nous directement sur la carte. Nous vous répondrons dans les plus brefs délais.',
+    Contact_Texte_description:'Remplissez le formulaire ci-dessous ou retrouvez-nous directement sur la carte. Nous vous répondrons dans les plus brefs délais.',
     Contact_Form_Votre_Nom: 'Votre Nom',
     Contact_Form_Votre_Email: 'Votre Email',
     Contact_Form_Sujet: 'Sujet',
@@ -55,8 +50,7 @@ const translations = {
     Footer_Service_5: 'Tuyau cassé',
 
     Footer_Bulletin: 'Bulletin',
-    Footer_Bulletin_Description:
-      'Restez informé de nos actualités et offres spéciales.',
+    Footer_Bulletin_Description:'Restez informé de nos actualités et offres spéciales.',
     Footer_Bulletin_Input_Placeholder: 'Votre email',
     Footer_Bulletin_Bouton: 'Envoyer',
 
@@ -84,8 +78,7 @@ const translations = {
 
     /* === SuperSection === */
     SuperSection_Titre: 'Solutions plomberie pour tous',
-    SuperSection_Description:
-      "Avec plus de 20 ans d'expérience, Jaouad OD vous offre des services fiables : réparation de fuites, installation de tuyauterie, entretien et dépannage.",
+    SuperSection_Description:"Avec plus de 20 ans d'expérience, Jaouad OD vous offre des services fiables : réparation de fuites, installation de tuyauterie, entretien et dépannage.",
     SuperSection_Appeler_maintenant: 'Appeler maintenant',
     SuperSection_Voir_nos_services: 'Voir nos services',
 
@@ -96,25 +89,21 @@ const translations = {
 
     /* === AboutPage === */
     AboutPage_Titre: 'À propos de nous',
-    AboutPage_Description:
-      'Notre priorité est de garantir la satisfaction de nos clients grâce à un travail soigné, un service fiable et des prix compétitifs.',
+    AboutPage_Description:'Notre priorité est de garantir la satisfaction de nos clients grâce à un travail soigné, un service fiable et des prix compétitifs.',
 
     /* === ContactPage === */
     ContactPage_Titre: 'Contact',
-    ContactPage_Description:
-      "Contactez-nous dès aujourd'hui pour toute question, devis ou urgence. Nous sommes disponibles 12/6 pour vous aider.",
+    ContactPage_Description: "Contactez-nous dès aujourd'hui pour toute question, devis ou urgence. Nous sommes disponibles 12/6 pour vous aider.",
 
     /* === GalleryPage === */
     GalleryPage_Title: 'Galerie',
-    GalleryPage_Description:
-      "Découvrez quelques-uns de nos travaux en plomberie, allant des petites réparations aux grands projets d'installation.",
+    GalleryPage_Description: "Découvrez quelques-uns de nos travaux en plomberie, allant des petites réparations aux grands projets d'installation.",
     GalleryPage_Section_Label: 'Nos réalisations en images',
     GalleryPage_Section_Header: 'Galerie de nos travaux',
 
     /* === ServicesPage === */
     ServicesPage_Title: 'services',
-    ServicesPage_Description:
-      'Nous proposons une large gamme de services de plomberie adaptés aux besoins des particuliers et des entreprises.',
+    ServicesPage_Description: 'Nous proposons une large gamme de services de plomberie adaptés aux besoins des particuliers et des entreprises.',
 
     /* === Login === */
     Login_Welcome: 'Bienvenue dans votre compte',
@@ -140,8 +129,7 @@ const translations = {
     ImageItem_Dialog_Title: 'Image',
     ImageItem_Dialog_Close_Button: 'Fermer',
     ImageItem_Alert_Title: 'Êtes-vous sûr ?',
-    ImageItem_Alert_Description:
-      'Cette action supprimera définitivement cette image',
+    ImageItem_Alert_Description: 'Cette action supprimera définitivement cette image',
     ImageItem_Alert_Cancel: 'Annuler',
     ImageItem_Alert_Confirm: 'Continuer',
 
@@ -151,8 +139,7 @@ const translations = {
 
     /* === AddService === */
     AddService_Title: 'Ajouter un service',
-    AddService_Description:
-      'Remplissez tous les champs pour ajouter un service',
+    AddService_Description: 'Remplissez tous les champs pour ajouter un service',
     AddService_Input_Service_Label: 'Service',
     AddService_Input_Service_Placeholder: 'Nom du Service',
     AddService_Select_Icon_Label: 'Icône',
@@ -163,8 +150,7 @@ const translations = {
 
     /* === DeleteService === */
     DeleteService_Title: 'Êtes-vous sûr ?',
-    DeleteService_Description:
-      'Cette action supprimera définitivement ce service',
+    DeleteService_Description: 'Cette action supprimera définitivement ce service',
     DeleteService_Cancel: 'Annuler',
     DeleteService_Confirm: 'Continuer',
 
@@ -175,8 +161,7 @@ const translations = {
 
     /* === UpdateService === */
     UpdateService_Title: 'Modifier le service',
-    UpdateService_Description:
-      'Remplissez les champs que vous voulez modifier pour ce service',
+    UpdateService_Description: 'Remplissez les champs que vous voulez modifier pour ce service',
     UpdateService_Input_Service_Label: 'Service',
     UpdateService_Input_Service_Placeholder: 'Nom du Service',
     UpdateService_Select_Icon_Label: 'Icône',
@@ -194,11 +179,9 @@ const translations = {
 
     /* === OtpCheck === */
     OtpCheck_Title: 'Entrez le code de vérification',
-    OtpCheck_Description:
-      'Nous avons envoyé un code à 6 chiffres à votre adresse e-mail.',
+    OtpCheck_Description: 'Nous avons envoyé un code à 6 chiffres à votre adresse e-mail.',
     OtpCheck_Verification_Label: 'Code de vérification',
-    OtpCheck_Instructions:
-      'Saisissez le code à 6 chiffres envoyé à votre e-mail.',
+    OtpCheck_Instructions: 'Saisissez le code à 6 chiffres envoyé à votre e-mail.',
     OtpCheck_Button_Text: 'Vérifier',
 
     /* === SideBar === */
@@ -243,8 +226,7 @@ const translations = {
 
     /* === HomeDashborad === */
     HomeDashborad_Welcome: 'Bienvenue JAOUAD OUADOUD',
-    HomeDashborad_Admin_Description:
-      "Vous êtes connecté en tant qu'administrateur. Depuis ce tableau de bord, vous pouvez gérer les services, les projets, consulter les messages des clients et suivre les statistiques globales.",
+    HomeDashborad_Admin_Description: "Vous êtes connecté en tant qu'administrateur. Depuis ce tableau de bord, vous pouvez gérer les services, les projets, consulter les messages des clients et suivre les statistiques globales.",
     HomeDashborad_Messages: 'Messages',
     HomeDashborad_Services: 'Services',
     HomeDashborad_Monthly_Stats_Title: 'Statistiques mensuelles des messages',
@@ -307,8 +289,7 @@ const translations = {
     /* === A propos (AboutUS) === */
     A_propos_de_nous: 'معلومات عنا',
     A_propos_Titre_principal: 'سباكك الموثوق دائمًا منذ أكثر من 20 عامًا',
-    A_propos_Texte_description:
-      'بفضل خبرة طويلة في هذا المجال، يقدم لك Jaouad OD حلولًا سريعة ودائمة لجميع احتياجاتك في السباكة. تركيب أو إصلاح أو صيانة — نضمن لك خدمة موثوقة ومهنية.',
+    A_propos_Texte_description: 'بفضل خبرة طويلة في هذا المجال، يقدم لك Jaouad OD حلولًا سريعة ودائمة لجميع احتياجاتك في السباكة. تركيب أو إصلاح أو صيانة — نضمن لك خدمة موثوقة ومهنية.',
     A_propos_Service_residentiel_commercial: 'السباكة السكنية والتجارية',
     A_propos_Service_rapide_fiable: 'خدمات سريعة وموثوقة بأسعار عادلة',
     A_propos_Service_urgence: 'متاح لإصلاحات الطوارئ',
@@ -328,8 +309,7 @@ const translations = {
     /* === Page Contact (Contact) === */
     Contact_Entrer_en_contact: 'تواصل معنا',
     Contact_Titre_principal: 'اتصل بنا لأي سؤال',
-    Contact_Texte_description:
-      'املأ النموذج أدناه أو اعثر علينا مباشرة على الخريطة. سنرد عليك في أقرب وقت ممكن.',
+    Contact_Texte_description: 'املأ النموذج أدناه أو اعثر علينا مباشرة على الخريطة. سنرد عليك في أقرب وقت ممكن.',
     Contact_Form_Votre_Nom: 'اسمك',
     Contact_Form_Votre_Email: 'بريدك الإلكتروني',
     Contact_Form_Sujet: 'الموضوع',
@@ -356,8 +336,7 @@ const translations = {
     Footer_Service_5: 'أنبوب مكسور',
 
     Footer_Bulletin: 'النشرة الإخبارية',
-    Footer_Bulletin_Description:
-      'كن على اطلاع دائم بآخر عروضنا ونصائحنا في عالم السباكة.',
+    Footer_Bulletin_Description: 'كن على اطلاع دائم بآخر عروضنا ونصائحنا في عالم السباكة.',
     Footer_Bulletin_Input_Placeholder: 'بريدك الإلكتروني',
     Footer_Bulletin_Bouton: 'إرسال',
 
@@ -385,8 +364,7 @@ const translations = {
 
     /* === SuperSection === */
     SuperSection_Titre: 'حلول السباكة للجميع',
-    SuperSection_Description:
-      'بفضل أكثر من 20 سنة من الخبرة، يقدم لك جواد وعدود خدمات سباكة موثوقة : إصلاح التسربات، تركيب الأنابيب، والصيانة الدورية و الكثير من الخدمات . نضمن حلولاً سريعة وعملية، استخدام مواد ذات جودة، واحترام مواعيد العمل مع متابعة بعد الإنتهاء لضمان رضاك.',
+    SuperSection_Description: 'بفضل أكثر من 20 سنة من الخبرة، يقدم لك جواد وعدود خدمات سباكة موثوقة : إصلاح التسربات، تركيب الأنابيب، والصيانة الدورية و الكثير من الخدمات . نضمن حلولاً سريعة وعملية، استخدام مواد ذات جودة، واحترام مواعيد العمل مع متابعة بعد الإنتهاء لضمان رضاك.',
     SuperSection_Appeler_maintenant: 'اتصل الآن',
     SuperSection_Voir_nos_services: 'عرض خدماتنا',
 
@@ -397,25 +375,21 @@ const translations = {
 
     /* === AboutPage === */
     AboutPage_Titre: 'من نحن',
-    AboutPage_Description:
-      'أولويتنا هي ضمان رضا عملائنا من خلال عمل متقن، خدمة موثوقة، وأسعار تنافسية، مع التزامنا بالجودة في كل تفاصيل العمل والاستجابة السريعة لكل احتياجاتكم.',
+    AboutPage_Description: 'أولويتنا هي ضمان رضا عملائنا من خلال عمل متقن، خدمة موثوقة، وأسعار تنافسية، مع التزامنا بالجودة في كل تفاصيل العمل والاستجابة السريعة لكل احتياجاتكم.',
 
     /* === ContactPage === */
     ContactPage_Titre: 'اتصل بنا',
-    ContactPage_Description:
-      'اتصل بنا اليوم لأي استفسار أو عرض سعر أو حالة طارئة. نحن متاحون 6 أيام في الأسبوع، 12 ساعة يوميًا لمساعدتك.',
+    ContactPage_Description: 'اتصل بنا اليوم لأي استفسار أو عرض سعر أو حالة طارئة. نحن متاحون 6 أيام في الأسبوع، 12 ساعة يوميًا لمساعدتك.',
 
     /* === GalleryPage === */
     GalleryPage_Title: 'المعرض',
-    GalleryPage_Description:
-      'اكتشف بعض أعمالنا في السباكة، من الإصلاحات الصغيرة إلى المشاريع الكبيرة للتركيب.',
+    GalleryPage_Description: 'اكتشف بعض أعمالنا في السباكة، من الإصلاحات الصغيرة إلى المشاريع الكبيرة للتركيب.',
     GalleryPage_Section_Label: 'أعمالنا بالصور',
     GalleryPage_Section_Header: 'معرض أعمالنا',
 
     /* === ServicesPage === */
     ServicesPage_Title: 'الخدمات',
-    ServicesPage_Description:
-      'نقدم مجموعة واسعة من خدمات السباكة لتلبية احتياجات الأفراد والشركات، بدءًا من الإصلاحات المنزلية البسيطة إلى المشاريع الكبيرة الخاصة بالمباني والمرافق التجارية.',
+    ServicesPage_Description: 'نقدم مجموعة واسعة من خدمات السباكة لتلبية احتياجات الأفراد والشركات، بدءًا من الإصلاحات المنزلية البسيطة إلى المشاريع الكبيرة الخاصة بالمباني والمرافق التجارية.',
 
     /* === Login === */
     Login_Welcome: 'مرحباً بك في حسابك',
@@ -491,11 +465,9 @@ const translations = {
 
     /* === OtpCheck === */
     OtpCheck_Title: 'أدخل رمز التحقق',
-    OtpCheck_Description:
-      'لقد أرسلنا رمزًا مكونًا من 6 أرقام إلى بريدك الإلكتروني.',
+    OtpCheck_Description: 'لقد أرسلنا رمزًا مكونًا من 6 أرقام إلى بريدك الإلكتروني.',
     OtpCheck_Verification_Label: 'رمز التحقق',
-    OtpCheck_Instructions:
-      'أدخل الرمز المكون من 6 أرقام المرسل إلى بريدك الإلكتروني.',
+    OtpCheck_Instructions: 'أدخل الرمز المكون من 6 أرقام المرسل إلى بريدك الإلكتروني.',
     OtpCheck_Button_Text: 'تحقق',
 
     /* === SideBar === */
@@ -540,8 +512,7 @@ const translations = {
 
     /* === HomeDashborad === */
     HomeDashborad_Welcome: 'مرحبًا JAOUAD OUADOUD',
-    HomeDashborad_Admin_Description:
-      'لقد سجلت الدخول كمسؤول. من لوحة التحكم هذه، يمكنك إدارة الخدمات، المشاريع، مراجعة رسائل العملاء ومتابعة الإحصاءات العامة.',
+    HomeDashborad_Admin_Description: 'لقد سجلت الدخول كمسؤول. من لوحة التحكم هذه، يمكنك إدارة الخدمات، المشاريع، مراجعة رسائل العملاء ومتابعة الإحصاءات العامة.',
     HomeDashborad_Messages: 'الرسائل',
     HomeDashborad_Services: 'الخدمات',
     HomeDashborad_Monthly_Stats_Title: 'الإحصاءات الشهرية للرسائل',

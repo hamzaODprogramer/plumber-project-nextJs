@@ -63,18 +63,18 @@ export default function Header(): JSX.Element {
         </div>
         <div className={`flex items-center gap-3 ${isRTL ? 'mr-auto' : 'ml-auto'}`}>
           <DropdownMenu modal={false}>
-          <DropdownMenuTrigger asChild>
-            <div className="flex items-center cursor-pointer gap-2.5 p-2.5 dark:bg-white/5 bg-black/5 dark:hover:bg-white/10 hover:bg-black/10">
-              <Image
-                className="rounded-full"
-                width={27}
-                height={27}
-                src={lang=='fr' ? "/francelg.png" : '/arabiclg.png'}
-                alt="lang"
-              />
-              <p className="text-black/80 dark:text-white font-semibold">{lang=='fr' ? "français" : "عربية"}</p>
-            </div>
-          </DropdownMenuTrigger>
+            <DropdownMenuTrigger asChild>
+              <div className="flex items-center cursor-pointer gap-2.5 p-2.5 dark:bg-white/5 bg-black/5 dark:hover:bg-white/10 hover:bg-black/10">
+                <Image
+                  className="rounded-full"
+                  width={27}
+                  height={27}
+                  src={lang=='fr' ? "/francelg.png" : '/arabiclg.png'}
+                  alt="lang"
+                />
+                <p className="text-black/80 dark:text-white font-semibold">{lang=='fr' ? "français" : "عربية"}</p>
+              </div>
+            </DropdownMenuTrigger>
           <DropdownMenuContent className="!rounded-none !dark:bg-gray-600 space-y-1 *:cursor-pointer">
             <DropdownMenuItem className={`${lang=='fr' ? 'bg-[#184d88] hover:bg-[#184d88]' : ''} !rounded-none`} onClick={() => changeLanguage('fr')}>
               <div className="flex items-center gap-2.5  ">
@@ -105,19 +105,19 @@ export default function Header(): JSX.Element {
               </div>
             </DropdownMenuItem>
           </DropdownMenuContent>
-        </DropdownMenu>
+          </DropdownMenu>
           <Drawer modal={false}>
-          <DrawerTrigger asChild>
-            <div
-              className={`flex md:hidden ${isRTL ? 'mr-auto -ml-1' : 'ml-auto -mr-10'} p-[9] dark:bg-white/5 bg-black/5 cursor-pointer dark:hover:bg-white/10 dark:text-white hover:bg-black/10`}
-            >
-              <Button
-                icon={
-                  <Menu size={28} color="black" className="cursor-pointer" />
-                }
-              />
-            </div>
-          </DrawerTrigger>
+            <DrawerTrigger asChild>
+              <div
+                className={`flex md:hidden ${isRTL ? 'mr-auto -ml-1' : 'ml-auto -mr-10'} p-[9] dark:bg-white/5 bg-black/5 cursor-pointer dark:hover:bg-white/10 dark:text-white hover:bg-black/10`}
+              >
+                <Button
+                  icon={
+                    <Menu size={28} color="black" className="cursor-pointer" />
+                  }
+                />
+              </div>
+            </DrawerTrigger>
           <DrawerContent className="!rounded-none">
             <DrawerHeader className="hidden">
               <DrawerTitle></DrawerTitle>
