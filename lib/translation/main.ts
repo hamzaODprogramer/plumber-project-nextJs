@@ -151,6 +151,7 @@ const translations = {
     /* === DeleteService === */
     DeleteService_Title: 'Êtes-vous sûr ?',
     DeleteService_Description: 'Cette action supprimera définitivement ce service',
+    DeleteImage_Description : 'Cette action supprimera définitivement ce image',
     DeleteService_Cancel: 'Annuler',
     DeleteService_Confirm: 'Continuer',
 
@@ -223,6 +224,8 @@ const translations = {
     AdminService_Table_Header_Description: 'Description',
     AdminService_Table_Header_Icon: 'Icône',
     AdminService_Table_Header_Action: 'Action',
+
+    AdminPage_Table_Button_Text : "AJOUTER",
 
     /* === HomeDashborad === */
     HomeDashborad_Welcome: 'Bienvenue JAOUAD OUADOUD',
@@ -434,9 +437,12 @@ const translations = {
     AddService_TextArea_Description_Placeholder: 'أدخل وصفاً',
     AddService_Close_Button: 'إغلاق',
 
+    AdminPage_Table_Button_Text : "إضافة",
+
     /* === DeleteService === */
     DeleteService_Title: 'هل أنت متأكد؟',
     DeleteService_Description: 'سيتم حذف هذه الخدمة نهائياً',
+    DeleteImage_Description: 'سيتم حذف هذه الصورة نهائياً',
     DeleteService_Cancel: 'إلغاء',
     DeleteService_Confirm: 'متابعة',
 
@@ -511,8 +517,8 @@ const translations = {
     AdminService_Table_Header_Action: 'الإجراء',
 
     /* === HomeDashborad === */
-    HomeDashborad_Welcome: 'مرحبًا JAOUAD OUADOUD',
-    HomeDashborad_Admin_Description: 'لقد سجلت الدخول كمسؤول. من لوحة التحكم هذه، يمكنك إدارة الخدمات، المشاريع، مراجعة رسائل العملاء ومتابعة الإحصاءات العامة.',
+    HomeDashborad_Welcome: 'مرحبًا جواد وعدود',
+    HomeDashborad_Admin_Description: 'لقد سجلت الدخول كمسؤول. من خلال لوحة التحكم هذه، يمكنك إدارة جميع الخدمات والمشاريع، مراجعة رسائل واستفسارات العملاء، متابعة الإحصاءات العامة، وضمان سير العمل بسلاسة وكفاءة.',
     HomeDashborad_Messages: 'الرسائل',
     HomeDashborad_Services: 'الخدمات',
     HomeDashborad_Monthly_Stats_Title: 'الإحصاءات الشهرية للرسائل',

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   AlertDialog,
   AlertDialogAction,
@@ -13,31 +13,39 @@ import {
 import { setOpenDeleteDialoge } from '@/lib/store/slicer';
 import type { RootState } from '@/lib/store/store';
 import { useDispatch, useSelector } from 'react-redux';
+import { CheckingDirection } from '@/lib/functions/global';
+import translations from '@/lib/translation/main';
 
 export default function DeleteService(): React.ReactNode {
+  
   const openDeleteDialoge = useSelector(
     (state: RootState) => state.admin.openDeleteDialoge,
   );
   const dispatch = useDispatch();
 
+  const [isRTL, setIsRTL] = useState<boolean>(false);
+  CheckingDirection(setIsRTL);
+
+  const lang = useSelector((state:RootState)=>state.admin.lang) as 'fr' | 'ar'
+
   return (
-    <AlertDialog open={openDeleteDialoge}>
-      <AlertDialogContent className="!rounded-none">
-        <AlertDialogHeader>
-          <AlertDialogTitle>Vous etes sûr ?</AlertDialogTitle>
+    <AlertDialog open={openDeleteDialoge} >
+      <AlertDialogContent className="!rounded-none" >
+        <AlertDialogHeader >
+          <AlertDialogTitle>{translations[lang].DeleteService_Title}</AlertDialogTitle>
           <AlertDialogDescription>
-            Cette action sera supprimer de maniere permanent ce service
+            {translations[lang].DeleteService_Description}
           </AlertDialogDescription>
         </AlertDialogHeader>
-        <AlertDialogFooter>
+        <AlertDialogFooter className='flex items-center gap-2'>
           <AlertDialogCancel
-            className="rounded-none text-[#061f46] cursor-pointer"
+            className="rounded-none text-[#061f46] dark:text-white cursor-pointer"
             onClick={() => dispatch(setOpenDeleteDialoge(false))}
           >
-            Anuller
+            {translations[lang].DeleteService_Cancel}
           </AlertDialogCancel>
-          <AlertDialogAction className="rounded-none bg-[#061f46] hover:bg-[#061f46]/90 cursor-pointer">
-            Continue
+          <AlertDialogAction className="rounded-none dark:text-white bg-[#061f46] hover:bg-[#061f46]/90 cursor-pointer">
+            {translations[lang].DeleteService_Confirm}
           </AlertDialogAction>
         </AlertDialogFooter>
       </AlertDialogContent>

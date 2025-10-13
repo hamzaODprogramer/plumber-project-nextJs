@@ -14,8 +14,13 @@ import {
   Legend,
 } from 'recharts';
 import { example_chart_data } from '@/lib/constant/global';
+import { useSelector } from 'react-redux';
+import { RootState } from '@/lib/store/store';
+import translations from '@/lib/translation/main';
 
 export default function HomeDashborad(): React.ReactNode {
+  const lang = useSelector((state: RootState) => state.admin.lang) as "fr" | "ar";
+
   return (
     <div className="p-5 dark:bg-gray-700">
       <div className="flex flex-col lg:flex-row items-center gap-6 flex-1">
@@ -23,12 +28,10 @@ export default function HomeDashborad(): React.ReactNode {
           <Image width={180} height={180} src="/team-1.png" alt="jaouad" />
           <div className="flex flex-col gap-3">
             <p className="text-[#061f46] dark:text-white text-2xl font-semibold">
-              Bienvenu JAOUAD OUADOUD
+              {translations[lang].HomeDashborad_Welcome}
             </p>
             <p className="text-black/60 dark:text-white/60 font-medium">
-              Vous êtes connecté en tant qu'administrateur. Depuis ce tableau de
-              bord, vous pouvez gérer les services, les projets, consulter les
-              messages des clients et suivre les statistiques globales.
+              {translations[lang].HomeDashborad_Admin_Description}
             </p>
           </div>
         </div>
@@ -42,7 +45,7 @@ export default function HomeDashborad(): React.ReactNode {
               />
             </div>
             <p className="text-black/70 dark:text-white/70 text-lg mt-5.5">
-              Messages
+              {translations[lang].HomeDashborad_Messages}
             </p>
             <p className="text-[rgb(6,31,70)] dark:text-white font-bold text-4xl">
               500
@@ -57,7 +60,7 @@ export default function HomeDashborad(): React.ReactNode {
               />
             </div>
             <p className="text-black/70 dark:text-white/70 text-lg mt-5.5">
-              Services
+              {translations[lang].HomeDashborad_Services}
             </p>
             <p className="text-[rgb(6,31,70)] dark:text-white font-bold text-4xl">
               500
@@ -67,11 +70,11 @@ export default function HomeDashborad(): React.ReactNode {
       </div>
       <div className="bg-white dark:bg-gray-800 mt-6 px-5 py-5.5 shadow-sm shadow-black/15 dark:shadow-white/15">
         <h3 className="text-xl font-semibold text-[#061f46] dark:text-white mb-4 capitalize">
-          Statistiques Mensuelles des message
+          {translations[lang].HomeDashborad_Monthly_Stats_Title}
         </h3>
         <ResponsiveContainer width="100%" height={300}>
           <LineChart data={example_chart_data}>
-            <CartesianGrid
+            <CartesianGrid 
               strokeDasharray="3 3"
               className="stroke-gray-200 dark:stroke-gray-600"
             />
@@ -100,7 +103,7 @@ export default function HomeDashborad(): React.ReactNode {
               stroke="rgb(6,31,70)"
               className="dark:stroke-white"
               strokeWidth={2}
-              name="Nombre des Messages"
+              name={translations[lang].HomeDashborad_Messages_Chart_Name}
             />
           </LineChart>
         </ResponsiveContainer>

@@ -24,8 +24,9 @@ import type { RootState } from '@/lib/store/store';
 import { useDispatch, useSelector } from 'react-redux';
 import AdminInput from '../admin-input';
 import AdminTextArea from '../admin-textarea';
-import { plumbingIcons } from '@/lib/constant/global';
+import { get_plumbingIcons } from '@/lib/constant/global';
 import { CheckingDirection } from '@/lib/functions/global';
+import translations from '@/lib/translation/main';
 
 export default function UpdateService(): React.ReactNode {
   const openUpdateDialoge = useSelector(
@@ -36,37 +37,40 @@ export default function UpdateService(): React.ReactNode {
 
   const [isRTL, setIsRTL] = useState<boolean>(false);
   CheckingDirection(setIsRTL);
+  const lang = useSelector((state:RootState)=>state.admin.lang) as "fr" | "ar"
+
+  const plumbingIcons = get_plumbingIcons(lang)
 
   return (
     <Dialog open={openUpdateDialoge}>
       <DialogContent className="sm:max-w-md !rounded-none [&>button]:hidden">
         <DialogHeader className="!rounded-none">
           <DialogTitle className={`${isRTL ? 'text-start' : ''}`}>
-            Modifier le service
+            {translations[lang].UpdateService_Title}
           </DialogTitle>
           <DialogDescription className={`${isRTL ? 'text-start' : ''}`}>
-            Remplir les champs que tu veux pour modifier ce services
+            {translations[lang].UpdateService_Description}
           </DialogDescription>
         </DialogHeader>
         <div className="flex items-center gap-2">
           <div className="grid flex-1 gap-2">
             <AdminInput
-              text="Service"
-              placeholder="Nom de Service"
+              text={translations[lang].UpdateService_Input_Service_Label}
+              placeholder={translations[lang].UpdateService_Input_Service_Placeholder}
               type="text"
             />
-            <div className="flex flex-col w-full  dark:bg-white/5 justify-start pt-0 pb-2 gap-1 ">
-              <label className="text-black/95 font-medium">Icon</label>
-              <Select value={selectedIcon} onValueChange={setSelectedIcon}>
-                <SelectTrigger className="w-full rounded-none bg-black/5 text-md h-10 border-1 border-black/20 ">
-                  <SelectValue placeholder="Selectionnez une icon" />
+            <div className="flex flex-col w-full justify-start pt-0 pb-2 gap-1 ">
+              <label className="text-black/95 font-medium dark:text-white/95">{translations[lang].UpdateService_Select_Icon_Label}</label>
+              <Select  value={selectedIcon} onValueChange={setSelectedIcon}>
+                <SelectTrigger dir={isRTL ? 'rtl' : 'ltr'} className="w-full rounded-none bg-black/5 dark:bg-white/5 text-md h-10 border-1 border-black/20 ">
+                  <SelectValue  className='' placeholder={translations[lang].UpdateService_Input_Service_Placeholder} />
                 </SelectTrigger>
                 <SelectContent
                   className="rounded-none max-h-[200px] overflow-y-auto"
                   position="popper"
                   sideOffset={5}
                 >
-                  {plumbingIcons.map((item) => {
+                  {plumbingIcons.map((item:any) => {
                     const Icon = item.icon;
                     return (
                       <SelectItem key={item.value} value={item.value}>
@@ -81,8 +85,8 @@ export default function UpdateService(): React.ReactNode {
               </Select>
             </div>
             <AdminTextArea
-              text="Description"
-              placeholder="Entrer une description"
+              text={translations[lang].UpdateService_TextArea_Description_Label}
+              placeholder={translations[lang].UpdateService_TextArea_Description_Placeholder}
             />
           </div>
         </div>
@@ -94,7 +98,7 @@ export default function UpdateService(): React.ReactNode {
               variant="secondary"
               className="cursor-pointer bg-[#061f46] text-white rounded-none hover:bg-[#061f46]/80"
             >
-              Fermer
+              {translations[lang].UpdateService_Close_Button}
             </Button>
           </DialogClose>
         </DialogFooter>

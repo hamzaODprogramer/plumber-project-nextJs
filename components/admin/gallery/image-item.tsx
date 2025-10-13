@@ -30,6 +30,7 @@ import {
   setOpenDeleteImageDialoge,
   setOpenShowImageDialoge,
 } from '@/lib/store/slicer';
+import translations from '@/lib/translation/main';
 
 export default function ImageItem({ src }: { src: string }): React.ReactNode {
   const dispatch = useDispatch();
@@ -40,11 +41,14 @@ export default function ImageItem({ src }: { src: string }): React.ReactNode {
     (state: RootState) => state.admin.openDeleteImageDialoge,
   );
 
+  const lang = useSelector((state:RootState)=>state.admin.lang) as 'fr' | 'ar'
+  
+
   return (
     <div className="bg-black/10 flex-1 h-50 relative group">
       <Dialog open={openShowImageDialoge}>
-        <DialogContent className="w-fit !rounded-none text-center [&>button]:hidden ">
-          <DialogTitle>Image</DialogTitle>
+        <DialogContent className="w-fit !rounded-none text-center [&>button]:hidden" dir={lang === 'ar' ? 'rtl' : 'ltr'}>
+          <DialogTitle>{lang == "fr" ? "Image" : "صورة"}</DialogTitle>
 
           <div className="relative w-110">
             <Image
@@ -56,9 +60,9 @@ export default function ImageItem({ src }: { src: string }): React.ReactNode {
               className="w-full h-auto object-cover object-center"
             />
           </div>
-          <DialogFooter className=" flex justify-center items-center w-full">
+          <DialogFooter className="flex justify-center items-center w-full">
             <DialogClose
-              className=" flex justify-center items-center w-full"
+              className="flex justify-center items-center w-full"
               asChild
             >
               <Button
@@ -67,7 +71,7 @@ export default function ImageItem({ src }: { src: string }): React.ReactNode {
                 variant="secondary"
                 className="cursor-pointer bg-[#061f46] text-white rounded-none hover:bg-[#061f46]/80"
               >
-                Fermer
+                {lang == "fr" ? "Fermer" : "الغاء"}
               </Button>
             </DialogClose>
           </DialogFooter>
@@ -75,22 +79,22 @@ export default function ImageItem({ src }: { src: string }): React.ReactNode {
       </Dialog>
 
       <AlertDialog open={openDeleteImageDialoge}>
-        <AlertDialogContent className="!rounded-none">
+        <AlertDialogContent className="!rounded-none" dir={lang === 'ar' ? 'rtl' : 'ltr'}>
           <AlertDialogHeader>
-            <AlertDialogTitle>Vous etes sûr ?</AlertDialogTitle>
+            <AlertDialogTitle>{translations[lang].DeleteService_Title}</AlertDialogTitle>
             <AlertDialogDescription>
-              Cette action sera supprimer de maniere permanent ce image
+              {translations[lang].DeleteImage_Description}
             </AlertDialogDescription>
           </AlertDialogHeader>
-          <AlertDialogFooter>
+          <AlertDialogFooter className='flex items-center gap-2'>
             <AlertDialogCancel
-              className="rounded-none text-[#061f46] cursor-pointer"
+              className="rounded-none text-[#061f46] dark:text-white cursor-pointer"
               onClick={() => dispatch(setOpenDeleteImageDialoge(false))}
             >
-              Anuller
+              {translations[lang].DeleteService_Cancel}
             </AlertDialogCancel>
-            <AlertDialogAction className="rounded-none bg-[#061f46] hover:bg-[#061f46]/90 cursor-pointer">
-              Continue
+            <AlertDialogAction className="rounded-none dark:text-white bg-[#061f46] hover:bg-[#061f46]/90 cursor-pointer">
+              {translations[lang].DeleteService_Confirm}
             </AlertDialogAction>
           </AlertDialogFooter>
         </AlertDialogContent>

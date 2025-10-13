@@ -1,6 +1,4 @@
 'use client';
-
-import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import {
   Dialog,
@@ -22,9 +20,11 @@ export default function ShowService() {
     (state: RootState) => state.admin.openShowDialoge,
   );
 
+  const lang = useSelector((state: RootState) => state.admin.lang);
+
   return (
     <Dialog open={openShowDialoge}>
-      <DialogContent className="max-w-sm text-center [&>button]:hidden">
+      <DialogContent className="max-w-sm text-center [&>button]:hidden !rounded-none">
         <DialogHeader>
           <div className="flex flex-col items-center gap-3">
             <div className="rounded-full p-5 bg-black/10 dark:bg-white/10">
@@ -53,7 +53,7 @@ export default function ShowService() {
               variant="secondary"
               className="cursor-pointer bg-[#061f46] text-white rounded-none hover:bg-[#061f46]/80"
             >
-              Fermer
+              {lang === 'fr' ? 'Fermer' : 'إغلاق'}
             </Button>
           </DialogClose>
         </DialogFooter>

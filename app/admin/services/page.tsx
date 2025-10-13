@@ -12,7 +12,7 @@ import {
 import { CheckingDirection } from '@/lib/functions/global';
 import { Eye, Pen, Trash } from 'lucide-react';
 import { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import {
   setOpenUpdateDialoge,
   setOpenDeleteDialoge,
@@ -20,6 +20,8 @@ import {
 } from '@/lib/store/slicer';
 import DeleteService from '@/components/admin/services/delete-service';
 import ShowService from '@/components/admin/services/show-service';
+import { RootState } from '@/lib/store/store';
+import translations from '@/lib/translation/main';
 
 export default function AdminService(): React.ReactNode {
   const [isRTL, setIsRTL] = useState<boolean>(false);
@@ -27,8 +29,10 @@ export default function AdminService(): React.ReactNode {
 
   const dispatch = useDispatch();
 
+  const lang = useSelector((state:RootState) => state.admin.lang) as 'fr' | 'ar';
+
   return (
-    <AdminPage addButton title="Services" titleTable="Liste des Services" table>
+    <AdminPage addButton title={translations[lang].AdminService_Page_Title} titleTable={translations[lang].AdminService_Table_Title} table>
       <UpdateService />
       <DeleteService />
       <ShowService />
@@ -36,13 +40,13 @@ export default function AdminService(): React.ReactNode {
         <TableHeader className="bg-[#061f46]">
           <TableRow className="*:p-3 *:pl-2 *:text-base *:text-white">
             <TableHead className={isRTL ? 'text-start' : ''}>
-              Nom de services
+              {translations[lang].AdminService_Table_Header_Name}
             </TableHead>
             <TableHead className={isRTL ? 'text-start' : ''}>
-              Description
+              {translations[lang].AdminService_Table_Header_Description}
             </TableHead>
-            <TableHead className={isRTL ? 'text-start' : ''}>Icon</TableHead>
-            <TableHead className={isRTL ? 'text-start' : ''}>Action</TableHead>
+            <TableHead className={isRTL ? 'text-start' : ''}>{translations[lang].AdminService_Table_Header_Icon}</TableHead>
+            <TableHead className={isRTL ? 'text-start' : ''}>{translations[lang].AdminService_Table_Header_Action}</TableHead>
           </TableRow>
         </TableHeader>
         <TableBody className="*:p-3 *:h-12 *:dark:text-white">

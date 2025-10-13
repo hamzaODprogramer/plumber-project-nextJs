@@ -10,6 +10,7 @@ import {
   LogOut,
   MessageCircle,
   User,
+  LucideIcon,
 } from 'lucide-react';
 import {
   Droplets,
@@ -37,14 +38,14 @@ export const getLinks = (lang : "fr" | "ar") : Array<{ route: string; name: stri
   { route: '/gallery', name: translations[lang]['gallerie'], icon: Images },
 ];
 
-export const admin_links: Array<{ route: string; name: string; icon?: any }> = [
-  { route: '/admin', name: 'Acceuil', icon: Home },
-  { route: '/admin/services', name: 'Services', icon: ShowerHead },
-  { route: '/admin/messages', name: 'Messages', icon: MessageCircle },
-  { route: '/admin/contact', name: 'Contacts', icon: Contact },
-  { route: '/admin/gallery', name: 'Gallerie', icon: Images },
-  { route: '/admin/account', name: 'Compte', icon: User },
-  { route: '/admn', name: 'Déconnexion', icon: LogOut },
+export const get_admin_links = (lang : "fr" | "ar") : Array<{ route: string; name: string; icon?: any }> => [
+  { route: '/admin', name: translations[lang]['admin_acceuil'], icon: Home },
+  { route: '/admin/services', name: translations[lang]['admin_services'], icon: ShowerHead },
+  { route: '/admin/messages', name: translations[lang]['messages'], icon: MessageCircle },
+  { route: '/admin/contact', name: translations[lang]['contacts'], icon: Contact },
+  { route: '/admin/gallery', name: translations[lang]['gallerie'], icon: Images },
+  { route: '/admin/account', name: translations[lang]['compte'], icon: User },
+  { route: '/admn', name: translations[lang]['deconnexion'], icon: LogOut },
 ];
 
 export const search_mapper: Array<{
@@ -98,20 +99,20 @@ export const example_chart_data = [
   { month: 'June', desktop: 214, mobile: 140 },
 ];
 
-export const plumbingIcons = [
-  { value: 'shower', label: 'Douche', icon: ShowerHead },
-  { value: 'droplets', label: "Gouttes d'eau", icon: Droplets },
-  { value: 'droplet', label: 'Goutte', icon: Droplet },
-  { value: 'waves', label: 'Vagues', icon: Waves },
-  { value: 'bath', label: 'Baignoire', icon: Bath },
-  { value: 'wrench', label: 'Clé', icon: Wrench },
-  { value: 'hammer', label: 'Marteau', icon: Hammer },
-  { value: 'settings', label: 'Réglages', icon: Settings },
-  { value: 'gauge', label: 'Jauge', icon: Gauge },
-  { value: 'thermometer', label: 'Thermomètre', icon: Thermometer },
-  { value: 'flame', label: 'Flamme', icon: Flame },
-  { value: 'wind', label: 'Vent/Air', icon: Wind },
-  { value: 'pipette', label: 'Pipette', icon: Pipette },
+export const get_plumbingIcons = (lang:"fr"|"ar") : any => [
+  { value: 'shower', label: translations[lang].douche, icon: ShowerHead },
+  { value: 'droplets', label: translations[lang].gouttes_eau, icon: Droplets },
+  { value: 'droplet', label: translations[lang].goutte, icon: Droplet },
+  { value: 'waves', label: translations[lang].vagues, icon: Waves },
+  { value: 'bath', label: translations[lang].baignoire, icon: Bath },
+  { value: 'wrench', label: translations[lang].cle, icon: Wrench },
+  { value: 'hammer', label: translations[lang].marteau, icon: Hammer },
+  { value: 'settings', label: translations[lang].reglages, icon: Settings },
+  { value: 'gauge', label: translations[lang].jauge, icon: Gauge },
+  { value: 'thermometer', label: translations[lang].thermometre, icon: Thermometer },
+  { value: 'flame',label: translations[lang].flamme, icon: Flame },
+  { value: 'wind',label: translations[lang].vent_air, icon: Wind },
+  { value: 'pipette',label: translations[lang].pipette, icon: Pipette },
 ];
 
 export const colorAccounts = [

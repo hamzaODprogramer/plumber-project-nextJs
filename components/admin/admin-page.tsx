@@ -4,8 +4,9 @@ import Button from '@/components/controls/button';
 
 import { Plus, Table2Icon } from 'lucide-react';
 import AddService from './services/add-service';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { setOpenAddDialoge } from '@/lib/store/slicer';
+import { RootState } from '@/lib/store/store';
 
 export default function AdminPage({
   children,
@@ -15,6 +16,8 @@ export default function AdminPage({
   titleTable,
 }: AdminPageProps): React.ReactNode {
   const dispatch = useDispatch();
+
+  const lang = useSelector((state:RootState) => state.admin.lang) as 'fr' | 'ar'; 
 
   return (
     <div className="p-5 dark:bg-gray-700 relative">
@@ -38,7 +41,7 @@ export default function AdminPage({
               <Button
                 onClick={() => dispatch(setOpenAddDialoge(true))}
                 className="px-2 uppercase gap-1 font-medium py-2 cursor-pointer text-md pr-3 text-white  bg-[#061f46] hover:bg-[#061f46]/85 border duration-700 transition-all"
-                text="Ajouter"
+                text={lang === 'fr' ? "AJOUTER" : "إضافة"}
                 icon={<Plus size={20} className="font-extrabold" />}
               />
             )}

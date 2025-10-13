@@ -19,15 +19,21 @@ import {
   DrawerTitle,
   DrawerTrigger,
 } from '@/components/ui/drawer';
-import { admin_links, search_mapper } from '@/lib/constant/global';
+import { get_admin_links, search_mapper } from '@/lib/constant/global';
 import Link from 'next/link';
-import { CheckingDirection, useDarkMode } from '@/lib/functions/global';
+import { CheckingDirection, useDarkMode, useTranslation } from '@/lib/functions/global';
 import { usePathname } from 'next/navigation';
 import NotificationItem from './notification-item';
 import { Button } from '../ui/button';
 import SearchItem from './search-item';
+import translations from '@/lib/translation/main';
 
 export default function AdminHeader(): React.ReactNode {
+
+  const lang = useSelector((state: RootState) => state.admin.lang) as keyof typeof translations;
+  const admin_links = get_admin_links(lang as 'fr' | 'ar');
+  const { changeLanguage } = useTranslation()
+
   const sideBarVisibility = useSelector(
     (action: RootState) => action.admin.sideBarVisibility,
   );
@@ -99,6 +105,7 @@ export default function AdminHeader(): React.ReactNode {
     return admin_links.filter((link) => matchingRoutes.includes(link.route));
   };
 
+
   return (
     <div className="flex items-center justify-between w-full  py-4 px-3 dark:bg-gray-800 bg-white  border-b border-black/10">
       <div className="flex-1 flex items-center gap-3">
@@ -115,10 +122,10 @@ export default function AdminHeader(): React.ReactNode {
                 <DrawerTitle></DrawerTitle>
               </DrawerHeader>
               <div className="*:uppercase *:pr-5  *:py-4 *:pl-5 *:flex *:items-center *:gap-2 *:text-blue-950 *:font-semibold">
-                {admin_links.map((link, idx) => {
+                {admin_links.map((link) => {
                   return (
                     <Link
-                      key={idx}
+                      key={link.route}
                       href={link.route}
                       className={`flex items-center gap-2 w-full cursor-pointer px-3 py-2.5 ${pathname == link.route ? 'bg-[#061f46] dark:bg-gray-600' : 'hover:bg-black/5 dark:hover:bg-white/5'}`}
                     >
@@ -149,13 +156,13 @@ export default function AdminHeader(): React.ReactNode {
         )}
         <div ref={searchContainerRef} className="relative flex-1">
           <div
-            className={`flex flex-row-reverse w-2/4 sm:w-1/4 bg-black/5 dark:bg-white/5 justify-start p-3 gap-2 items-center focus-within:w-1/3 transition-all duration-300 focus-within:ring-2 focus-within:ring-blue-100`}
+            className={`flex flex-row-reverse w-2/4 sm:w-1/4 bg-black/5 dark:bg-white/5 justify-start p-3 gap-2 items-center focus-within:w-7/8 sm:focus-within:w-1/3  transition-all duration-300 focus-within:ring-2 focus-within:ring-blue-100`}
           >
             <input
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               type="search"
-              placeholder="Recherche"
+              placeholder={translations[lang].AdminHeader_Search_Placeholder}
               className={`flex-1 dark:text-white text-gray-600 font-semibold outline-none w-full bg-transparent `}
             />
             <Search
@@ -165,7 +172,7 @@ export default function AdminHeader(): React.ReactNode {
           </div>
 
           {query.length > 0 && (
-            <div className="absolute p-2 bg-white border-1 shadow-md shadow-black/30 border-black/20 top-full left-0 mt-2 w-[50%] dark:bg-gray-600  z-90 rounded-none space-y-1">
+            <div className={`absolute p-2 bg-white border-1 shadow-md shadow-black/30 border-black/20 top-full ${isRTL ? 'right-0' : 'left-0'}  mt-2 w-full sm:w-[50%] dark:bg-gray-600  z-90 rounded-none space-y-1 overflow-hidden`}>
               {filterLinks().map((link, key) => (
                 <div
                   key={key}
@@ -182,7 +189,7 @@ export default function AdminHeader(): React.ReactNode {
                 <div className="flex items-center justify-center flex-col gap-2 p-3">
                   <Inbox size={35} className="text-[#061f46]/80" />
                   <p className="text-[#061f46]/80 font-medium">
-                    Aucun résultat trouvé
+                    {translations[lang].AdminHeader_NoResults}
                   </p>
                 </div>
               )}
@@ -210,11 +217,10 @@ export default function AdminHeader(): React.ReactNode {
               variant="secondary"
               className="cursor-pointer p-4 w-full bg-[#061f46] text-white rounded-none hover:bg-[#061f46]/80"
             >
-              Supprimer les notification
+              {translations[lang].AdminHeader_ClearNotifications}
             </Button>
           </DropdownMenuContent>
         </DropdownMenu>
-
         {mode === 'dark' ? (
           <Sun
             onClick={toggleMode}
@@ -228,35 +234,35 @@ export default function AdminHeader(): React.ReactNode {
             className="p-3  bg-black/5 dark:bg-white/5 dark:text-white dark:hover:bg-white/10 hover:bg-black/10"
           />
         )}
-        <DropdownMenu>
+        <DropdownMenu modal={false}>
           <DropdownMenuTrigger asChild>
-            <div className="flex items-center gap-2.5 p-2.5 dark:bg-white/5 bg-black/5 dark:hover:bg-white/10 hover:bg-black/10">
+            <div className="flex items-center cursor-pointer gap-2.5 p-2.5 dark:bg-white/5 bg-black/5 dark:hover:bg-white/10 hover:bg-black/10">
               <Image
                 className="rounded-full"
                 width={27}
                 height={27}
-                src="/francelg.png"
+                src={lang=='fr' ? "/francelg.png" : '/arabiclg.png'}
                 alt="lang"
               />
-              <p className="text-black/80 dark:text-white  font-semibold">FR</p>
+              <p className="text-black/80 dark:text-white font-semibold">{lang=='fr' ? "français" : "عربية"}</p>
             </div>
           </DropdownMenuTrigger>
           <DropdownMenuContent className="!rounded-none !dark:bg-gray-600 space-y-1 *:cursor-pointer">
-            <DropdownMenuItem>
+            <DropdownMenuItem className={`${lang=='fr' ? 'bg-[#184d88] hover:!bg-[#184d88]' : ''} !rounded-none`} onClick={() => changeLanguage('fr')}>
               <div className="flex items-center gap-2.5  ">
                 <Image
                   className="rounded-full"
                   width={18}
                   height={18}
-                  src="/francelg.png"
+                  src={"/francelg.png"}
                   alt="lang"
                 />
-                <p className="text-black/80 dark:text-white  font-semibold">
+                <p className={`${lang=='fr' ? 'text-white' : 'text-black/80'}  dark:text-white  font-semibold`}>
                   francais
                 </p>
               </div>
             </DropdownMenuItem>
-            <DropdownMenuItem>
+            <DropdownMenuItem className={`${lang=='ar' ? 'bg-[#184d88] hover:!bg-[#184d88]' : ''} !rounded-none`} onClick={() => changeLanguage('ar')}>
               <div className="flex items-center gap-2.5  ">
                 <Image
                   className="rounded-full"
@@ -265,7 +271,7 @@ export default function AdminHeader(): React.ReactNode {
                   src="/arabiclg.png"
                   alt="lang"
                 />
-                <p className="text-black/80 dark:text-white  font-semibold">
+                <p className={`${lang=='ar' ? 'text-white' : 'text-black/80'}  dark:text-white  font-semibold`}>
                   العربية
                 </p>
               </div>
