@@ -1,16 +1,53 @@
-
-
 generator client {
   provider = "prisma-client-js"
 }
 
 datasource db {
-  provider  = "postgresql"
-  url       = env("DATABASE_URL")
-  directUrl = env("DIRECT_URL")
+  provider  = "sqlite"
+  url       = env("DATABASE_URL_LOCAL")
+  //directUrl = env("DIRECT_URL")
 }
 
-model Test {
-  test_name Int @id @default(autoincrement())
-  test_text String
+model Account {
+  account_id       Int    @id @default(autoincrement())
+  account_username String
+  account_password String
+  account_email    String
+}
+
+model Services {
+  service_id          Int    @id @default(autoincrement())
+  service_name        String
+  service_icon        String
+  service_description String
+
+  message Message[]
+}
+
+model Contact {
+  contact_id    Int    @id @default(autoincrement())
+  contact_name  String
+  consact_value String
+}
+
+model Message {
+  message_id         Int    @id @default(autoincrement())
+  message_username   String
+  message_subject    String
+  message_email      String
+  message_desciption String
+
+  service            Services @relation(fields: [servicesService_id], references: [service_id])
+  servicesService_id Int
+
+  notification notificaiton @relation(fields: [notification_id] , references: [notification_id])
+  notification_id Int
+}
+
+model notificaiton {
+  notification_id          Int    @id @default(autoincrement())
+  notificaiton_title       String
+  notificaiton_description String
+
+  message Message[]
 }

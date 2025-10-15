@@ -5,6 +5,7 @@ export default function AdminInput({
   placeholder,
   text,
   className,
+  ...Props
 }: {
   type: string;
   placeholder: string;
@@ -17,6 +18,7 @@ export default function AdminInput({
     >
       <label className="text-black/95 font-medium dark:text-white/95">{text}</label>
       <input
+        {...Props}
         type={type}
         placeholder={placeholder}
         className="flex-1 focus:ring-3 border-1 border-black/20 transition-all duration-500 focus:ring-blue-300 bg-black/5 dark:bg-white/5  dark:text-white p-2 font-normal outline-none w-full"
