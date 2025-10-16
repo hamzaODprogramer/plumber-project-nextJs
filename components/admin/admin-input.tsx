@@ -11,7 +11,7 @@ export default function AdminInput({
   placeholder: string;
   text: string;
   className?: string;
-}): React.ReactNode {
+} & React.InputHTMLAttributes<HTMLInputElement> ): React.ReactNode {
   return (
     <div
       className={`flex flex-col w-full   justify-start pt-0 pb-2 gap-1 ${className}`}
