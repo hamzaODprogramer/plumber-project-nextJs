@@ -14,11 +14,11 @@ A modern, multilingual plumbing services web application built with Next.js 15, 
 
 ### Admin Dashboard
 
-- **Service Management**: Create, update, and delete service offerings
-- **Message Management**: View and respond to customer inquiries
-- **Account Management**: User administration and access control
-- **Statistics & Analytics**: Business insights with interactive charts
-- **Secure Authentication**: Protected admin routes
+- **Service Management**: Create, update, and delete service offerings.
+- **Message Management**: View and respond to customer inquiries.
+- **Account Management**: User administration and access control.
+- **Statistics & Analytics**: Business insights with interactive charts.
+- **Secure Authentication**: Protected admin routes.
 
 ## 🚀 Tech Stack
 
