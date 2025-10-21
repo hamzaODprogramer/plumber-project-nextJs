@@ -86,6 +86,7 @@ export default function AddService(): React.ReactNode {
                   value={name}
                   onChange={e=>setName(e.target.value)}
                 />
+                {state?.ErrorValidation?.name && <span className='text-red-400 text-sm -mt-3'>{state.ErrorValidation.name}</span>}
                 <div className="flex flex-col w-full  justify-start pt-0 pb-2 gap-1 ">
                   <label className="text-black/95 dark:text-white/95 font-medium">{translations[lang].UpdateService_Select_Icon_Label}</label>
                   <Select name='icon' value={icon} onValueChange={setIcon}>
@@ -118,6 +119,7 @@ export default function AddService(): React.ReactNode {
                   value={description}
                   onChange={e=>setDescription(e.target.value)}
                 />
+                {state?.ErrorValidation?.description && <span className='text-red-400 text-sm -mt-3'>{state.ErrorValidation.description}</span>}
               </div>
             </div>
           
@@ -128,7 +130,7 @@ export default function AddService(): React.ReactNode {
                 variant="secondary"
                 className="cursor-pointer bg-[#061f46] text-white rounded-none hover:bg-[#061f46]/80"
               >
-                { pending ? <BeatLoader size={8} color='white' /> : translations[lang].Add_Button}
+                { pending ? <BeatLoader size={7} color='white' /> : translations[lang].Add_Button}
             </Button>
             <DialogClose asChild>
               <Button

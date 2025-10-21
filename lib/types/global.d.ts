@@ -1,6 +1,7 @@
 import { JsonObject } from '@prisma/client/runtime/library';
 import { LucideIcon } from 'lucide-react';
 import { JSX } from 'react';
+import z from 'zod';
 
 declare global {
   interface service_cardPros {
@@ -41,6 +42,7 @@ declare global {
     success : boolean,
     error? : string,
     message? : string,
-    data? : JsonObject
+    data? : JsonObject,
+    ErrorValidation? : Record<string,string>
   }
 }
