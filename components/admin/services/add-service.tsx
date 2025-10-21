@@ -1,5 +1,5 @@
 'use client';
-import React, { useActionState, useState } from 'react';
+import React, { useActionState, useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import {
   Dialog,
@@ -29,6 +29,7 @@ import { CheckingDirection } from '@/lib/functions/global';
 import translations from '@/lib/translation/main';
 import { addService } from '@/actions/services.actions';
 import { BeatLoader } from 'react-spinners'
+import { toast } from 'sonner';
 export default function AddService(): React.ReactNode {
   // visibility dialog code section
   const openAddDialoge = useSelector(
@@ -51,6 +52,16 @@ export default function AddService(): React.ReactNode {
   const [name,setName] = useState<string>('')
   const [icon,setIcon] = useState<string>('')
   const [description,setDescription] = useState<string>('')
+  useEffect(()=>{
+    if(!pending && state){
+      if(state.success){
+        toast.success(state.message)
+        dispatch(setOpenAddDialoge(false))
+      }else{
+        toast.error(state.message)
+      }
+    }
+  },[state])
 
   return (
     

@@ -1,3 +1,4 @@
+import { JsonObject } from '@prisma/client/runtime/library';
 import { LucideIcon } from 'lucide-react';
 import { JSX } from 'react';
 
@@ -35,4 +36,11 @@ declare global {
     className?: string;
     fill: boolean;
   };
+
+  type ActionCRUD = {
+    success : boolean,
+    error? : string,
+    message? : string,
+    data? : JsonObject
+  }
 }
