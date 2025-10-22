@@ -19,7 +19,7 @@ import {
   SelectValue,
 } from '@/components/ui/select';
 
-import { setOpenAddDialoge } from '@/lib/store/slicer';
+import { setOpenAddDialoge, setReloadData } from '@/lib/store/slicer';
 import type { RootState } from '@/lib/store/store';
 import { useDispatch, useSelector } from 'react-redux';
 import AdminInput from '../admin-input';
@@ -37,9 +37,6 @@ export default function AddService(): React.ReactNode {
   );
   const dispatch = useDispatch();
 
-
-  const [selectedIcon, setSelectedIcon] = React.useState('');
-
   // mutli-lang code section
   const [isRTL, setIsRTL] = useState<boolean>(false);
   CheckingDirection(setIsRTL);
@@ -52,15 +49,19 @@ export default function AddService(): React.ReactNode {
   const [name,setName] = useState<string>('')
   const [icon,setIcon] = useState<string>('')
   const [description,setDescription] = useState<string>('')
+  const reloadData = useSelector((state:RootState) => state.admin.reloadData)
+
   useEffect(()=>{
     if(!pending && state){
       if(state.success){
         toast.success(state.message)
         dispatch(setOpenAddDialoge(false))
+        dispatch(setReloadData(!reloadData))
       }else{
         toast.error(state.message)
       }
     }
+
   },[state])
 
   return (

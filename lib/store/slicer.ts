@@ -10,6 +10,7 @@ const initialState = {
   openOtpCompteAdminDialoge: false,
   sideBarVisibility: true,
   lang : 'fr',
+  reloadData: false
 };
 
 export const adminSlicer = createSlice({
@@ -42,6 +43,9 @@ export const adminSlicer = createSlice({
     },
     setLang: (state, action) => {
       state.lang = action.payload;
+    },
+    setReloadData: (state, action) => {
+      state.reloadData = action.payload;
     }
   },
 });
@@ -55,6 +59,7 @@ export const {
   setOpenDeleteImageDialoge,
   setOpenOtpCompteAdminDialoge,
   setSideBarVisibility,
-  setLang
+  setLang,
+  setReloadData
 } = adminSlicer.actions;
 export default adminSlicer.reducer;

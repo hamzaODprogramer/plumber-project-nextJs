@@ -45,4 +45,11 @@ declare global {
     data? : JsonObject,
     ErrorValidation? : Record<string,string>
   }
+
+  type serviceDataProps = {
+    service_id?: number,
+    service_name?: string,
+    service_icon?: string,
+    service_description?: string
+  }
 }

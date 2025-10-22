@@ -56,3 +56,12 @@ export async function addService(prevState: any, formData: FormData) : Promise<A
     }
   }
 }
+
+export async function getAllServices(): Promise<serviceDataProps[]> {
+  try {
+    return await prisma.services.findMany()   
+  } catch (error) {
+    console.log(error)
+    return []
+  }
+}
