@@ -100,19 +100,19 @@ export const example_chart_data = [
 ];
 
 export const get_plumbingIcons = (lang:"fr"|"ar") : any => [
-  { value: 'shower', label: translations[lang].douche, icon: ShowerHead },
-  { value: 'droplets', label: translations[lang].gouttes_eau, icon: Droplets },
-  { value: 'droplet', label: translations[lang].goutte, icon: Droplet },
-  { value: 'waves', label: translations[lang].vagues, icon: Waves },
-  { value: 'bath', label: translations[lang].baignoire, icon: Bath },
-  { value: 'wrench', label: translations[lang].cle, icon: Wrench },
-  { value: 'hammer', label: translations[lang].marteau, icon: Hammer },
-  { value: 'settings', label: translations[lang].reglages, icon: Settings },
-  { value: 'gauge', label: translations[lang].jauge, icon: Gauge },
-  { value: 'thermometer', label: translations[lang].thermometre, icon: Thermometer },
-  { value: 'flame',label: translations[lang].flamme, icon: Flame },
-  { value: 'wind',label: translations[lang].vent_air, icon: Wind },
-  { value: 'pipette',label: translations[lang].pipette, icon: Pipette },
+  { value: 'Shower', label: translations[lang].douche, icon: ShowerHead },
+  { value: 'Droplets', label: translations[lang].gouttes_eau, icon: Droplets },
+  { value: 'Droplet', label: translations[lang].goutte, icon: Droplet },
+  { value: 'Waves', label: translations[lang].vagues, icon: Waves },
+  { value: 'Bath', label: translations[lang].baignoire, icon: Bath },
+  { value: 'Wrench', label: translations[lang].cle, icon: Wrench },
+  { value: 'Hammer', label: translations[lang].marteau, icon: Hammer },
+  { value: 'Settings', label: translations[lang].reglages, icon: Settings },
+  { value: 'Gauge', label: translations[lang].jauge, icon: Gauge },
+  { value: 'Thermometer', label: translations[lang].thermometre, icon: Thermometer },
+  { value: 'Flame',label: translations[lang].flamme, icon: Flame },
+  { value: 'Wind',label: translations[lang].vent_air, icon: Wind },
+  { value: 'Pipette',label: translations[lang].pipette, icon: Pipette },
 ];
 
 export const colorAccounts = [

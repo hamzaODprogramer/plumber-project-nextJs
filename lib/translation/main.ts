@@ -1,5 +1,9 @@
 const translations = {
   fr: {
+
+    /* Global */
+    Add_Button : "Envoyer",
+
     /* === A propos (AboutUS) === */
     A_propos_de_nous: 'À propos de nous',
     A_propos_Titre_principal: 'Votre plombier de confiance depuis plus de 20 ans',
@@ -289,6 +293,9 @@ const translations = {
   },
 
   ar: {
+    /* Global */ 
+    Add_Button : "ارسال",
+
     /* === A propos (AboutUS) === */
     A_propos_de_nous: 'معلومات عنا',
     A_propos_Titre_principal: 'سباكك الموثوق دائمًا منذ أكثر من 20 عامًا',

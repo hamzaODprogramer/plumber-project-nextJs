@@ -5,6 +5,7 @@ import { RootState } from '@/lib/store/store';
 import { Suspense } from 'react';
 import { useSelector } from 'react-redux';
 import Loading from './loading';
+import { Toaster } from '@/components/ui/sonner';
 
 export default function AdminLayout({
   children,
@@ -22,6 +23,7 @@ export default function AdminLayout({
           <Suspense fallback={<Loading />}>{children}</Suspense>
         </main>
       </div>
+      <Toaster />
     </div>
   );
 }
