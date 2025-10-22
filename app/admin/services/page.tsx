@@ -17,6 +17,7 @@ import {
   setOpenUpdateDialoge,
   setOpenDeleteDialoge,
   setOpenShowDialoge,
+  setCurrentId,
 } from '@/lib/store/slicer';
 import DeleteService from '@/components/admin/services/delete-service';
 import ShowService from '@/components/admin/services/show-service';
@@ -108,7 +109,7 @@ export default function AdminService(): React.ReactNode {
                 <TableCell className="flex items-center gap-3">
                   <div className="p-1.5 bg-black/10 dark:bg-white/10 cursor-pointer hover:bg-black/15 dark:hover:bg-white/15">
                     <Eye
-                      onClick={() => dispatch(setOpenShowDialoge(true))}
+                      onClick={() => {dispatch(setOpenShowDialoge(true))}}
                       className="text-[#061f46]/80 dark:text-white"
                       size={23}
                     />
@@ -124,7 +125,7 @@ export default function AdminService(): React.ReactNode {
                   </div>
                   <div className="p-1.5 bg-black/10 dark:bg-white/10 cursor-pointer hover:bg-black/15 dark:hover:bg-white/15">
                     <Trash
-                      onClick={() => dispatch(setOpenDeleteDialoge(true))}
+                      onClick={() =>{dispatch(setCurrentId(data.service_id)); dispatch(setOpenDeleteDialoge(true))}}
                       className="text-[#061f46]/80 dark:text-white"
                       size={23}
                     />

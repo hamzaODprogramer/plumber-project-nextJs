@@ -131,7 +131,7 @@ export default function AddService(): React.ReactNode {
                 variant="secondary"
                 className="cursor-pointer bg-[#061f46] text-white rounded-none hover:bg-[#061f46]/80"
               >
-                { pending ? <BeatLoader size={7} color='white' /> : translations[lang].Add_Button}
+                { pending ? <BeatLoader size={5} color='white' /> : translations[lang].Add_Button}
             </Button>
             <DialogClose asChild>
               <Button

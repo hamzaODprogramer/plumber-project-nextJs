@@ -10,7 +10,8 @@ const initialState = {
   openOtpCompteAdminDialoge: false,
   sideBarVisibility: true,
   lang : 'fr',
-  reloadData: false
+  reloadData: false,
+  currendId: -1
 };
 
 export const adminSlicer = createSlice({
@@ -46,6 +47,9 @@ export const adminSlicer = createSlice({
     },
     setReloadData: (state, action) => {
       state.reloadData = action.payload;
+    },
+    setCurrentId: (state,action) => {
+      state.currendId = action.payload
     }
   },
 });
@@ -60,6 +64,7 @@ export const {
   setOpenOtpCompteAdminDialoge,
   setSideBarVisibility,
   setLang,
-  setReloadData
+  setReloadData,
+  setCurrentId
 } = adminSlicer.actions;
 export default adminSlicer.reducer;

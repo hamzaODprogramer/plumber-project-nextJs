@@ -65,3 +65,25 @@ export async function getAllServices(): Promise<serviceDataProps[]> {
     return []
   }
 }
+
+export async function deleteService(id:number): Promise<ActionCRUD> {
+  try {
+    const deletedService = await prisma.services.delete({
+      where: {service_id:id}
+    })
+    if(deletedService) return {
+      success: true,
+      message: "le service a ete supprimer avec succés"
+    };
+    else return {
+      success: false,
+      message: "un erreur produit lors la supprission de service"
+    }
+  } catch (error) {
+    console.log(id)
+    return {
+      success: false,
+      message: "un erreur produit lors la supprission de service",
+    }
+  }
+}
