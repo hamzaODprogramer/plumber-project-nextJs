@@ -42,7 +42,7 @@ declare global {
     success : boolean,
     error? : string,
     message? : string,
-    data? : JsonObject,
+    data? : any,
     ErrorValidation? : Record<string,string>
   }
 

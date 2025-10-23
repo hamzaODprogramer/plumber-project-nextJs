@@ -76,8 +76,8 @@ export default function AdminService(): React.ReactNode {
             <TableRow>
               <TableCell colSpan={4} className="text-center">
                 <div className="flex items-center justify-center flex-col gap-2 py-8">
-                  <Inbox size={35} className="text-[#061f46]/80" />
-                  <p className="text-[#061f46]/80 font-medium">
+                  <Inbox size={35} className="text-[#061f46]/80 dark:text-white/80" />
+                  <p className="text-[#061f46]/80 dark:text-white/80 font-medium">
                     {translations[lang].AdminHeader_NoResults}
                   </p>
                 </div>
@@ -95,7 +95,7 @@ export default function AdminService(): React.ReactNode {
                 className={` ${idx % 2 == 0 ? 'bg-[#061f46]/5' : ''}`}
               >
                 <TableCell className='font-bold'>{data.service_name}</TableCell>
-                <TableCell>{data.service_description}</TableCell>
+                <TableCell>{data?.service_description && data.service_description.length > 50 ? data.service_description.substring(0, 50) + " ......" : (data.service_description || '')}</TableCell>
                 <TableCell>
                   {IconComponent ? <div className='flex items-center gap-1'>
                     <IconComponent className="w-5 h-5" />
@@ -109,7 +109,7 @@ export default function AdminService(): React.ReactNode {
                 <TableCell className="flex items-center gap-3">
                   <div className="p-1.5 bg-black/10 dark:bg-white/10 cursor-pointer hover:bg-black/15 dark:hover:bg-white/15">
                     <Eye
-                      onClick={() => {dispatch(setOpenShowDialoge(true))}}
+                      onClick={() => {dispatch(setCurrentId(data.service_id));dispatch(setOpenShowDialoge(true))}}
                       className="text-[#061f46]/80 dark:text-white"
                       size={23}
                     />

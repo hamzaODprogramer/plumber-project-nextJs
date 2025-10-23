@@ -100,7 +100,7 @@ export const example_chart_data = [
 ];
 
 export const get_plumbingIcons = (lang:"fr"|"ar") : any => [
-  { value: 'Shower', label: translations[lang].douche, icon: ShowerHead },
+  { value: 'ShowerHead', label: translations[lang].douche, icon: ShowerHead },
   { value: 'Droplets', label: translations[lang].gouttes_eau, icon: Droplets },
   { value: 'Droplet', label: translations[lang].goutte, icon: Droplet },
   { value: 'Waves', label: translations[lang].vagues, icon: Waves },

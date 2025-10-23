@@ -87,3 +87,27 @@ export async function deleteService(id:number): Promise<ActionCRUD> {
     }
   }
 }
+
+export async function getService(id: number): Promise<ActionCRUD> {
+  try {
+    const service = await prisma.services.findUnique({
+      where: { service_id: id }
+    });
+    if (service) {
+      return {
+        success: true,
+        data: service as serviceDataProps 
+      };
+    } else {
+      return {
+        success: false,
+        message: "une erreur produit"
+      };
+    }
+  } catch (error) {
+    return {
+      success: false,
+      message: "une erreur produit"
+    };
+  }
+}
