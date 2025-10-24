@@ -1,7 +1,10 @@
 "use server"
 
 import { prisma } from "@/lib/prisma/main"
+import { RootState } from "@/lib/store/store"
 import { ServiceValidation } from "@/lib/validation/main"
+import { useSelector } from "react-redux"
+import { Action } from "redux"
 
 export async function addService(prevState: any, formData: FormData) : Promise<ActionCRUD> {
   try {
@@ -109,5 +112,63 @@ export async function getService(id: number): Promise<ActionCRUD> {
       success: false,
       message: "une erreur produit"
     };
+  }
+}
+
+
+export async function updateService(prevState: any, formData: FormData): Promise<ActionCRUD>{
+  try {
+    const serviceData : serviceDataProps = {
+      service_name : formData.get("name") as string,
+      service_icon : formData.get("icon") as string,
+      service_description : formData.get("description") as string
+    }
+
+    const result = ServiceValidation.safeParse({
+      name: serviceData.service_name,
+      description: serviceData.service_description
+    })
+
+    if(!result.success){
+      const errorMap: Record<string,string> = {}
+      result.error.issues.forEach((err)=>{
+        if(err.path[0]){
+          errorMap[err.path[0] as string] = err.message
+        }
+      })
+
+      return {
+        success : false,
+        ErrorValidation : errorMap,
+        message: "Please fix the validation errors in the form"
+      }
+    }
+
+    const id = Number(formData.get("id"))
+
+    const updatedService = await prisma.services.update({
+      where: {service_id:id},
+      data : serviceData
+    })
+
+    if(updatedService){
+
+      return {
+        success: true,
+        message: "Service updated successfully",
+        data: updatedService,
+      }
+    }else{
+      return {
+        success: false,
+        error: "Failed to update service",
+      }
+    }
+    
+  } catch (error) {
+    return {
+      success: false,
+      message : "Failed to update service",
+    }
   }
 }

@@ -115,7 +115,7 @@ export default function AdminService(): React.ReactNode {
                     />
                   </div>
                   <div
-                    onClick={() => dispatch(setOpenUpdateDialoge(true))}
+                    onClick={() => {dispatch(setCurrentId(data.service_id));dispatch(setOpenUpdateDialoge(true))}}
                     className="p-1.5 bg-black/10 dark:bg-white/10 cursor-pointer hover:bg-black/15 dark:hover:bg-white/15"
                   >
                     <Pen
