@@ -9,3 +9,11 @@ export const ServiceValidation = z.object({
         .string()
         .min(15, "Description must be at least 15 characters"),
 })
+
+export const MessageValidation = z.object({
+    username: z
+    .string()
+    .min(3,"Name must be at least 3 characters"),
+    email: z
+    .email("type a valide email")
+})

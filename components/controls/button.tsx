@@ -1,27 +1,32 @@
-import { JSX, MouseEventHandler, ReactNode } from 'react';
+import { JSX, ReactNode } from 'react';
+import { BeatLoader } from 'react-spinners';
 
-interface buttonProps {
+interface ButtonProps {
   text?: string;
   className?: string;
   icon?: ReactNode;
-  onClick?: MouseEventHandler<HTMLButtonElement>;
+  pending?: boolean,
+  iconSize?: number
 }
 
 export default function Button({
   text,
   icon,
-  className,
-  onClick,
-}: buttonProps): JSX.Element {
+  className = '',
+  pending,
+  iconSize,
+  ...props
+}: ButtonProps & React.ButtonHTMLAttributes<HTMLButtonElement>): JSX.Element {
   return (
-    <>
-      <button
-        onClick={onClick}
-        className={`w-fit h-fit flex items-center ${className}`}
-      >
-        {icon}
-        {text}
-      </button>
-    </>
+    <button
+      className={`w-fit flex items-center disabled:opacity-50 disabled:cursor-not-allowed ${className}`}
+      {...props}
+    >
+      {
+        pending
+        ? <BeatLoader size={iconSize} color='white' /> 
+        : <>{icon} {text}</>
+      }
+    </button>
   );
 }

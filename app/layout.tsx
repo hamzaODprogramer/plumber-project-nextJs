@@ -23,7 +23,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html>
       <head></head>
       <body className={`${poppins.variable} font-sans h-150`}>
         <ReduxProvider>

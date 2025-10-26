@@ -52,4 +52,13 @@ declare global {
     service_icon?: string,
     service_description?: string
   }
+
+  type messageDataProps = {
+    message_id?: number,
+    message_username: string,
+    message_subject?: string,
+    message_email: string,
+    message_description: string
+    servicesService_id ?: number
+  }
 }

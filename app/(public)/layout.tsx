@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Poppins } from 'next/font/google';
 import Header from '@/components/public/header';
 import Footer from '@/components/public/footer';
+import { Toaster } from '@/components/ui/sonner';
 
 const poppins = Poppins({
   variable: '--font-poppins',
@@ -27,6 +28,7 @@ export default function RootLayout({
       <body className={`${poppins.variable} font-sans`}>
         <Header />
         {children}
+        <Toaster />
       </body>
     </html>
   );
