@@ -34,6 +34,7 @@ model Message {
   message_subject     String       @default("")
   message_email       String
   message_description String
+  created_at DateTime @default(now())
   
   service             Services?     @relation(fields: [servicesService_id], references: [service_id])
   servicesService_id  Int?

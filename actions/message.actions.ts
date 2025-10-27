@@ -56,3 +56,11 @@ export async function addMessage(prevState:any,formData:FormData): Promise<Actio
         }
     }
 }
+
+export async function getAllMessages() : Promise<messageDataProps[]> {
+    try{
+        return await prisma.message.findMany() as messageDataProps[]
+    }catch(error:any){
+        return []
+    }
+}

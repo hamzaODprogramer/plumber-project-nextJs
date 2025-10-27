@@ -7,33 +7,36 @@ import { Plus, Reply } from 'lucide-react';
 import React from 'react';
 import { useSelector } from 'react-redux';
 
-export default function MessageClient(): React.ReactNode {
+export default function MessageClient({message_username,message_email,message_description,created_at}:messageDataProps): React.ReactNode {
   const lang = useSelector((state:RootState) => state.admin.lang) as 'fr' | 'ar'; 
   
   return (
     <div className="w-full bg-white dark:bg-gray-800 p-3 flex flex-col gap-3 shadow-sm shadow-black/15 dark:shadow-white/15">
       <div className="flex items-center gap-2">
         <div
-          className="text-white dark:text-[#061f46] flex items-center justify-center rounded-full w-10 h-10 font-bold text-lg"
+          className="text-white flex items-center justify-center rounded-full w-10 h-10 font-bold text-lg"
           style={{
             backgroundColor:
               colorAccounts[Math.floor(Math.random() * colorAccounts.length)],
           }}
         >
-          S
+          {message_username[0].toUpperCase()}
         </div>
         <div>
           <p className="font-semibold text-[#061f46] dark:text-white">
-            Hamza OUADOUD
+            {message_username}
           </p>
-          <p className="text-gray-500 dark:text-white/50 text-sm">2025-25-20</p>
+          <p className="text-gray-500 dark:text-white/50 text-sm">
+            {new Date(created_at).toLocaleDateString('en-US', { 
+              year: 'numeric', 
+              month: '2-digit', 
+              day: '2-digit' 
+            })}
+          </p>
         </div>
       </div>
       <div className="w-full dark:text-white bg-black/5 dark:bg-white/5 px-3 py-2 font-normal border-1 border-[#061f46]/20 dark:border-white/20 shadow-sm shadow-[#061f46]/10 dark:shadow-white">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et ut autem
-        sint incidunt impedit ipsam aliquid libero repudiandae! Minima enim
-        deserunt officiis consequatur corrupti et delectus voluptas quibusdam
-        atque ea!
+        {message_description}
       </div>
       <textarea
         placeholder={translations[lang].MessageClient_Text_Placeholder}

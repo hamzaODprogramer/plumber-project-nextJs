@@ -59,6 +59,7 @@ declare global {
     message_subject?: string,
     message_email: string,
     message_description: string
-    servicesService_id ?: number
+    servicesService_id ?: number,
+    created_at?: any
   }
 }
